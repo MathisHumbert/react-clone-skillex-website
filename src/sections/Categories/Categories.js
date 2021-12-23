@@ -5,7 +5,7 @@ import Header from './Header';
 
 const Categories = () => {
   return (
-    <Wrapper>
+    <Wrapper className="section">
       <Header />
       <Content />
     </Wrapper>
@@ -13,7 +13,6 @@ const Categories = () => {
 };
 
 const Wrapper = styled.section`
-  padding: 36px 0;
   width: 100%;
   display: flex;
   flex-direction: column;

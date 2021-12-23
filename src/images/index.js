@@ -12,6 +12,13 @@ const images = {
   leadership: require('./icon-leadership.svg').default,
   responsibility: require('./icon-responsibility.svg').default,
   flexibility: require('./icon-flexibility.svg').default,
+  customer_1: require('./customers_ava-01.jpg'),
+  customer_2: require('./customers_ava-02.jpg'),
+  customer_3: require('./customers_ava-03.jpg'),
+  customer_4: require('./customers_ava-04.jpg'),
+  customer_5: require('./customers_ava-05.jpg'),
+  customer_6: require('./customers_ava-06.jpg'),
+  customer_7: require('./customers_ava-07.jpg'),
 };
 
 export default images;

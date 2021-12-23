@@ -1,6 +1,13 @@
 import styled from 'styled-components';
 
-import { Sidebar, Navbar, FindPassion, Categories, Skills } from './sections';
+import {
+  Sidebar,
+  Navbar,
+  FindPassion,
+  Categories,
+  Skills,
+  Reviews,
+} from './sections';
 
 function App() {
   return (
@@ -11,13 +18,13 @@ function App() {
         <FindPassion />
         <Categories />
         <Skills />
+        <Reviews />
       </Wrapper>
     </>
   );
 }
 
 const Wrapper = styled.main`
-  padding: 0 24px;
   padding-bottom: 20rem;
 `;
 export default App;

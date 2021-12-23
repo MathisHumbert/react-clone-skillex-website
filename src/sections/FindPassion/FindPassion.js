@@ -5,7 +5,7 @@ import { findPassionData } from '../../utlis/data';
 
 const FindPassion = () => {
   return (
-    <Wrapper>
+    <Wrapper className="section">
       <article className="left">
         <h1>Watch.</h1>
         <h1>Learn.</h1>
@@ -32,7 +32,6 @@ const Wrapper = styled.section`
   width: 100%;
   display: grid;
   gap: 60px;
-  padding-top: 36px;
   padding-bottom: 182px;
   position: relative;
 

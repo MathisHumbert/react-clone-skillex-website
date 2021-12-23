@@ -4,7 +4,7 @@ import Content from './Content';
 
 const Skills = () => {
   return (
-    <Wrapper>
+    <Wrapper className="section">
       <header>
         <h1>Get the skills you need for a job that is in demand.</h1>
         <p>
@@ -18,7 +18,6 @@ const Skills = () => {
 };
 
 const Wrapper = styled.section`
-  padding: 26px 0;
   position: relative;
 
   header {

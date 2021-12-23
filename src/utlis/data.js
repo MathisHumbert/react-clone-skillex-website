@@ -80,7 +80,6 @@ const categoriesImages = [
   },
 ];
 
-console.log(images);
 const skillsData = [
   {
     id: 1,
@@ -102,4 +101,62 @@ const skillsData = [
   },
 ];
 
-export { findPassionData, categoriesHeading, categoriesImages, skillsData };
+const reviewsData = [
+  {
+    id: 1,
+    img: images.customer_1,
+    text: 'The explanations are clear, the teachers are responsible and friendly, and the homework is real practice',
+    name: 'Rob Zuber',
+    job: 'CEO',
+  },
+  {
+    id: 2,
+    img: images.customer_2,
+    text: 'I learned a lot of new things, I immediately apply my knowledge in my work, found myself a new client',
+    name: 'Melanle Pickett',
+    job: 'IT Manager',
+  },
+  {
+    id: 3,
+    img: images.customer_3,
+    text: 'I really like the speakers of the course and the quality of the lectures. There is always feedback',
+    name: 'Regis Wilson',
+    job: 'Engineer',
+  },
+  {
+    id: 4,
+    img: images.customer_4,
+    text: 'A new profession is a lot of vivid impressions. Today I was at the presentation of the regional business award',
+    name: 'Emma Watson',
+    job: 'Cook',
+  },
+  {
+    id: 5,
+    img: images.customer_5,
+    text: 'The course shows all the stages of the work of an SMM marketer. And also excellent practice',
+    name: 'Emma Watson',
+    job: 'Cook',
+  },
+  {
+    id: 6,
+    img: images.customer_6,
+    text: 'On the course "Data Analyst in Python" everything is very interesting and informative, very detailed material',
+    name: 'Chris Hemsworth',
+    job: 'Analyst',
+  },
+  {
+    id: 7,
+    img: images.customer_7,
+    text: 'For several months I studied one of the most popular programming languages on the course "Java developer"',
+    name: 'Elizabeth Stone',
+    job: 'Developer',
+  },
+];
+
+export {
+  findPassionData,
+  categoriesHeading,
+  categoriesImages,
+  skillsData,
+  reviewsData,
+};

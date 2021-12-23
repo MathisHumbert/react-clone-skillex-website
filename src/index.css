@@ -38,6 +38,10 @@ code {
     monospace;
 }
 
+.section {
+  padding: 36px 24px;
+}
+
 button {
   border: 0;
   cursor: pointer;
