@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import CategoriesContent from '../components/CategoriesContent';
-import CategoriesImages from '../components/CategoriesImages';
+import CategoriesHeader from '../components/CategoriesHeader';
 
 const Categories = () => {
   return (
     <Wrapper>
-      <CategoriesImages />
+      <CategoriesHeader />
       <CategoriesContent />
     </Wrapper>
   );

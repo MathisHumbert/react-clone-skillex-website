@@ -32,7 +32,7 @@ const Wrapper = styled.section`
   width: 100%;
   display: grid;
   gap: 60px;
-  margin-top: 20px;
+  padding-top: 36px;
   padding-bottom: 182px;
   position: relative;
 
