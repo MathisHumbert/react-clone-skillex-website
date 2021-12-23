@@ -1,10 +1,11 @@
-import { Navbar, Sidebar } from './sections';
+import { Categories, FindPassion, Navbar, Sidebar } from './sections';
 
 function App() {
   return (
     <>
       <Navbar />
       <Sidebar />
+      <FindPassion />
     </>
   );
 }
