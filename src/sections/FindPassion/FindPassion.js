@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from './Image';
-import { findPassionData } from '../utlis/data';
+import { findPassionData } from '../../utlis/data';
 
 const FindPassion = () => {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { categoriesHeading } from '../utlis/data';
+import { categoriesHeading } from '../../utlis/data';
 import styled from 'styled-components';
 
 const Header = () => {

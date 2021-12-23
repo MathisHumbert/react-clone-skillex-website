@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { IoReorderTwo } from 'react-icons/io5';
-import logo from '../images/617fa55008f302348b1f7703_logo.svg';
+import logo from '../../images/617fa55008f302348b1f7703_logo.svg';
 
 const Navbar = () => {
   return (

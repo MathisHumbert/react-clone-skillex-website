@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { categoriesImages } from '../utlis/data';
+import { categoriesImages } from '../../utlis/data';
 import { ImArrowUpRight2 } from 'react-icons/im';
 
 const Content = () => {
