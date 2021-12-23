@@ -26,7 +26,5 @@ function App() {
   );
 }
 
-const Wrapper = styled.main`
-  padding-bottom: 20rem;
-`;
+const Wrapper = styled.main``;
 export default App;

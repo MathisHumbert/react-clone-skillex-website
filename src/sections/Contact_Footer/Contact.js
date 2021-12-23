@@ -43,6 +43,7 @@ const Wrapper = styled.article`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    1px solid rgba(30,30,47,.1)
   }
 
   ul {
