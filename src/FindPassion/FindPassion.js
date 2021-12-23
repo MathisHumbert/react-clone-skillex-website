@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import SingleImages from '../components/SingleImages';
+import Image from './Image';
 import { findPassionData } from '../utlis/data';
 
 const FindPassion = () => {
@@ -13,7 +13,7 @@ const FindPassion = () => {
       </article>
       <article className="right">
         {findPassionData.map((item) => {
-          return <SingleImages key={item.id} {...item} />;
+          return <Image key={item.id} {...item} />;
         })}
       </article>
       <form className="contact">

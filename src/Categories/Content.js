@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { categoriesImages } from '../utlis/data';
 import { ImArrowUpRight2 } from 'react-icons/im';
 
-const CategoriesContent = () => {
+const Content = () => {
   return (
     <Wrapper>
       {categoriesImages.map((item) => {
@@ -87,4 +87,4 @@ const Wrapper = styled.div`
     font-size: 12px;
   }
 `;
-export default CategoriesContent;
+export default Content;

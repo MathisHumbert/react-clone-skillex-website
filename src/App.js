@@ -1,6 +1,10 @@
 import styled from 'styled-components';
-import { Categories, FindPassion, Navbar, Sidebar } from './sections';
+
+import Sidebar from './Navbar_Sidebar/Sidebar';
+import Navbar from './Navbar_Sidebar/Navbar';
 import Skills from './Skills/SkillsPage';
+import FindPassion from './FindPassion/FindPassion';
+import Categories from './Categories/Categories';
 
 function App() {
   return (

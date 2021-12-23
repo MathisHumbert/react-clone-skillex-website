@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import CategoriesContent from '../components/CategoriesContent';
-import CategoriesHeader from '../components/CategoriesHeader';
+import Content from './Content';
+import Header from './Header';
 
 const Categories = () => {
   return (
     <Wrapper>
-      <CategoriesHeader />
-      <CategoriesContent />
+      <Header />
+      <Content />
     </Wrapper>
   );
 };

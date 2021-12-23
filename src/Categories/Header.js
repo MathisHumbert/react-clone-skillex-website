@@ -2,7 +2,7 @@ import React from 'react';
 import { categoriesHeading } from '../utlis/data';
 import styled from 'styled-components';
 
-const CategoriesImages = () => {
+const Header = () => {
   const [id, setId] = React.useState(1);
 
   return (
@@ -73,4 +73,4 @@ const Wrapper = styled.header`
     }
   }
 `;
-export default CategoriesImages;
+export default Header;

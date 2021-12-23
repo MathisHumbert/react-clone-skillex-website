@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const SingleImages = ({ mobileImg, desktopImg, title1, title2 }) => {
+const Image = ({ mobileImg, desktopImg, title1, title2 }) => {
   return (
     <Wrapper>
       <img src={mobileImg} alt="passion-img" />
@@ -81,4 +81,4 @@ const Wrapper = styled.div`
     text-transform: uppercase;
   }
 `;
-export default SingleImages;
+export default Image;
