@@ -6,6 +6,7 @@ function App() {
       <Navbar />
       <Sidebar />
       <FindPassion />
+      <Categories />
     </>
   );
 }
