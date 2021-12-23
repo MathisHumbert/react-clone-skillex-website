@@ -7,7 +7,7 @@ import {
   Categories,
   Skills,
   Reviews,
-  Contact_Footer,
+  ContactFooter,
 } from './sections';
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
         <Categories />
         <Skills />
         <Reviews />
-        <Contact_Footer />
+        <ContactFooter />
       </Wrapper>
     </>
   );

@@ -1,4 +1,11 @@
 import images from '../images';
+import {
+  FaFacebookF,
+  FaBehance,
+  FaLinkedinIn,
+  FaInstagram,
+  FaDribbble,
+} from 'react-icons/fa';
 
 // console.log(images);
 
@@ -155,6 +162,29 @@ const reviewsData = [
 
 const links = ['Find passion', 'Categories', 'Skills', 'Customer'];
 
+const icons = [
+  {
+    icon: <FaFacebookF />,
+    url: 'https://www.facebook.com/halolabteam/',
+  },
+  {
+    icon: <FaBehance />,
+    url: 'https://www.behance.net/halolab',
+  },
+  {
+    icon: <FaLinkedinIn />,
+    url: 'https://www.linkedin.com/company/halolabteam/',
+  },
+  {
+    icon: <FaInstagram />,
+    url: 'https://www.instagram.com/halolabteam/',
+  },
+  {
+    icon: <FaDribbble />,
+    url: 'https://dribbble.com/halolab /',
+  },
+];
+
 export {
   findPassionData,
   categoriesHeading,
@@ -162,4 +192,5 @@ export {
   skillsData,
   reviewsData,
   links,
+  icons,
 };

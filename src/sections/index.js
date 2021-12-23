@@ -4,7 +4,7 @@ import FindPassion from './FindPassion/FindPassion';
 import Categories from './Categories/Categories';
 import Skills from './Skills/Skills';
 import Reviews from './Reviews/Reviews';
-import Contact_Footer from './Contact_Footer/Contact_Footer';
+import ContactFooter from './Contact_Footer/ContactFooter';
 
 export {
   Sidebar,
@@ -13,5 +13,5 @@ export {
   Categories,
   Skills,
   Reviews,
-  Contact_Footer,
+  ContactFooter,
 };
