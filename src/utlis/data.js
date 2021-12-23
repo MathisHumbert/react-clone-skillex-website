@@ -153,10 +153,13 @@ const reviewsData = [
   },
 ];
 
+const links = ['Find passion', 'Categories', 'Skills', 'Customer'];
+
 export {
   findPassionData,
   categoriesHeading,
   categoriesImages,
   skillsData,
   reviewsData,
+  links,
 };

@@ -75,9 +75,15 @@ const Reviews = () => {
 
 const buttonActive = keyframes`
 0%{
+ border: 1px solid transparent;
+};
+25%{
  border: 1px solid rgba(30, 30, 47, 0.15);
 };
 50%{
+ border: 1px solid rgba(30, 30, 47, 0.15);
+};
+75%{
  border: 1px solid rgba(30, 30, 47, 0.15);
 };
 100%{
@@ -86,6 +92,8 @@ border: 1px solid transparent;
 `;
 
 const Wrapper = styled.section`
+  padding: 36px 0;
+
   h1 {
     font-size: 40px;
     text-align: center;
@@ -159,7 +167,7 @@ const Wrapper = styled.section`
     transition: border 0.2s ease-in-out;
 
     &.clicked {
-      animation: ${buttonActive} 0.4s ease-in-out 1;
+      animation: ${buttonActive} 0.6s ease-in-out 1;
     }
   }
 `;
