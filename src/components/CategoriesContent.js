@@ -35,7 +35,6 @@ const Wrapper = styled.div`
 
   article {
     height: 90%;
-    border: 1px solid red;
     display: grid;
     grid-template-rows: 70% 15% 15%;
     cursor: pointer;

@@ -1,6 +1,6 @@
-import { keyboardImplementationWrapper } from '@testing-library/user-event/dist/keyboard';
 import styled from 'styled-components';
-import { Categories, FindPassion, Navbar, Sidebar, Skills } from './sections';
+import { Categories, FindPassion, Navbar, Sidebar } from './sections';
+import Skills from './Skills/SkillsPage';
 
 function App() {
   return (

@@ -4,6 +4,5 @@ import FindPassion from './FindPassion';
 import Footer from './Footer';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
-import Skills from './Skills';
 
-export { Categories, Customer, FindPassion, Footer, Navbar, Sidebar, Skills };
+export { Categories, Customer, FindPassion, Footer, Navbar, Sidebar };

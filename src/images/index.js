@@ -9,6 +9,9 @@ const images = {
   categories_2: require('./categories_02.jpg'),
   categories_3: require('./categories_03.jpg'),
   categories_4: require('./categories_04.jpeg'),
+  leadership: require('./icon-leadership.svg').default,
+  responsibility: require('./icon-responsibility.svg').default,
+  flexibility: require('./icon-flexibility.svg').default,
 };
 
 export default images;

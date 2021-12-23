@@ -80,4 +80,26 @@ const categoriesImages = [
   },
 ];
 
-export { findPassionData, categoriesHeading, categoriesImages };
+console.log(images);
+const skillsData = [
+  {
+    id: 1,
+    logo: images.leadership,
+    title: 'Leadership',
+    text: 'Fully committed to the success company',
+  },
+  {
+    id: 2,
+    logo: images.responsibility,
+    title: 'Responsibility',
+    text: 'Employees will alaways be my top priority',
+  },
+  {
+    id: 3,
+    logo: images.flexibility,
+    title: 'Flexibility',
+    text: 'The ability to switch is an important skill',
+  },
+];
+
+export { findPassionData, categoriesHeading, categoriesImages, skillsData };
