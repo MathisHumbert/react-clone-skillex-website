@@ -1,17 +1,54 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { reviewsData } from '../../utlis/data';
 import { ImArrowLeft2, ImArrowRight2 } from 'react-icons/im';
 
 const Reviews = () => {
+  const slider = useRef(null);
+  const review = useRef(null);
+  const [sliderValue, setSliderValue] = useState(0);
+
+  const toggleClick = (e, type) => {
+    const target = e.currentTarget;
+    target.classList.add('clicked');
+    const value = review.current.offsetWidth + 24;
+    const maxValue = -(
+      reviewsData.length * value -
+      slider.current.getBoundingClientRect().width +
+      24
+    );
+
+    if (type === 'inc') {
+      if (sliderValue - 240 <= maxValue) {
+        slider.current.style.transform = `translateX(${maxValue}px)`;
+        setSliderValue((oldValue) => maxValue);
+      } else {
+        slider.current.style.transform = `translateX(${sliderValue - value}px)`;
+        setSliderValue((oldValue) => oldValue - value);
+      }
+    } else {
+      if (sliderValue + 240 >= 0) {
+        slider.current.style.transform = `translateX(${0}px)`;
+        setSliderValue((oldValue) => 0);
+      } else {
+        slider.current.style.transform = `translateX(${sliderValue + value}px)`;
+        setSliderValue((oldValue) => oldValue + value);
+      }
+    }
+
+    setTimeout(() => {
+      target.classList.remove('clicked');
+    }, 600);
+  };
+
   return (
     <Wrapper>
       <h1>What our customer say.</h1>
-      <article className="slider">
+      <article className="slider" ref={slider}>
         {reviewsData.map((item) => {
           const { id, img, job, name, text } = item;
           return (
-            <div key={id} className="reviews-item">
+            <div key={id} className="reviews-item" ref={review}>
               <p>{text}</p>
               <footer>
                 <img src={img} alt={name} />
@@ -25,16 +62,28 @@ const Reviews = () => {
         })}
       </article>
       <div className="btn-container">
-        <button type="button">
+        <button type="button" onClick={(e) => toggleClick(e, 'dec')}>
           <ImArrowLeft2 />
         </button>
-        <button type="button">
+        <button type="button" onClick={(e) => toggleClick(e, 'inc')}>
           <ImArrowRight2 />
         </button>
       </div>
     </Wrapper>
   );
 };
+
+const buttonActive = keyframes`
+0%{
+ border: 1px solid rgba(30, 30, 47, 0.15);
+};
+50%{
+ border: 1px solid rgba(30, 30, 47, 0.15);
+};
+100%{
+border: 1px solid transparent;
+};
+`;
 
 const Wrapper = styled.section`
   h1 {
@@ -46,7 +95,8 @@ const Wrapper = styled.section`
 
   .slider {
     display: flex;
-    overflow: hidden;
+    transform: translateX(0);
+    transition: transform 0.2s linear;
   }
 
   .reviews-item {
@@ -106,19 +156,12 @@ const Wrapper = styled.section`
     opacity: 0.8;
     border: 1px solid transparent;
     border-radius: 50%;
+    transition: border 0.2s ease-in-out;
 
-    &:active {
-      animation: ${buttonActive} 0.6s linear 1;
+    &.clicked {
+      animation: ${buttonActive} 0.4s ease-in-out 1;
     }
   }
 `;
 
-const buttonActive = keyframes`
-from{
- border-color: transparent
-}
-to{
- border-color: rgba(30, 30, 47, 0.15)
-}
-`;
 export default Reviews;
