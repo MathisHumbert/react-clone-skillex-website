@@ -6,9 +6,9 @@ const images = {
   desktopHome_2: require('./find-passion-desktop-2.jpg'),
   desktopHome_3: require('./find-passion-desktop-3.jpg'),
   categories_1: require('./categories_01.jpg'),
-  categories_1: require('./categories_02.jpg'),
-  categories_1: require('./categories_03.jpg'),
-  categories_1: require('./categories_04.jpeg'),
+  categories_2: require('./categories_02.jpg'),
+  categories_3: require('./categories_03.jpg'),
+  categories_4: require('./categories_04.jpeg'),
 };
 
 export default images;

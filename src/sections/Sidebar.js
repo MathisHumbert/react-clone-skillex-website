@@ -33,8 +33,8 @@ const Wrapper = styled.aside`
   overflow: hidden;
 
   &.active {
-    width: 100vw;
-    padding: 100px 24px 0 24px;
+    width: 100%;
+    padding: 100px 24px 24px 24px;
   }
 
   li {

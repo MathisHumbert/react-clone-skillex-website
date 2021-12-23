@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import SingleImages from '../components/SingleImages';
 import { findPassionData } from '../utlis/data';
-console.log(findPassionData);
 
 const FindPassion = () => {
   return (
