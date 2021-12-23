@@ -8,8 +8,8 @@ const Contact = () => {
     <Wrapper>
       <img src={logo} alt="main-logo" />
       <ul>
-        {links.map((item, index) => {
-          return <li key={index}>{item}</li>;
+        {links.map((item) => {
+          return <li key={item.id}>{item.text}</li>;
         })}
       </ul>
       <div className="form-container">
@@ -43,7 +43,6 @@ const Wrapper = styled.article`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    1px solid rgba(30,30,47,.1)
   }
 
   ul {

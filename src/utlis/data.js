@@ -160,7 +160,24 @@ const reviewsData = [
   },
 ];
 
-const links = ['Find passion', 'Categories', 'Skills', 'Customer'];
+const links = [
+  {
+    id: 1,
+    text: 'Find passion',
+  },
+  {
+    id: 2,
+    text: 'Categories',
+  },
+  {
+    id: 1,
+    text: 'Skills',
+  },
+  {
+    id: 1,
+    text: 'Customer',
+  },
+];
 
 const icons = [
   {

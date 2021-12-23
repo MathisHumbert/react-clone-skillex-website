@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import Image from './Image';
+import Form from './Form';
 import { findPassionData } from '../../utlis/data';
 
 const FindPassion = () => {
+  const [id, setId] = React.useState(1);
+
   return (
     <Wrapper className="section">
       <article className="left">
@@ -11,19 +13,33 @@ const FindPassion = () => {
         <h1>Learn.</h1>
         <h1>Grow.</h1>
       </article>
-      <article className="right">
+      <article className="right" onMouseLeave={() => setId(1)}>
         {findPassionData.map((item) => {
-          return <Image key={item.id} {...item} />;
+          const { mobileImg, title1, title2 } = item;
+          return (
+            <div
+              key={item.id}
+              className={
+                id === item.id ? 'active image-container' : 'image-container'
+              }
+              onMouseEnter={() => setId(item.id)}
+            >
+              <img src={mobileImg} alt="passion-img" />
+              <footer>
+                <div className="left-header">
+                  <h3>{title1}</h3>
+                  <h3>{title2}</h3>
+                </div>
+                <div className="right-header">
+                  <h2>100</h2>
+                  <h4>topics</h4>
+                </div>
+              </footer>
+            </div>
+          );
         })}
       </article>
-      <form className="contact">
-        <input
-          type="text"
-          placeholder="Find your passion"
-          className="contact-input"
-        />
-        <button type="submit">Go</button>
-      </form>
+      <Form />
     </Wrapper>
   );
 };
@@ -41,42 +57,112 @@ const Wrapper = styled.section`
   }
 
   .right {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    align-items: center;
+    max-height: 600px;
   }
 
-  form {
+  .image-container {
+    width: 100%;
+    height: 20%;
+    position: relative;
+    cursor: pointer;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: height 0.4s ease-in-out;
+
+    &.active {
+      height: 60%;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      height: 200px;
+      width: 100%;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.2) 20%,
+        rgba(0, 0, 0, 0.75) 100%
+      );
+      border-radius: 20px;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  footer {
     position: absolute;
-    bottom: 36px;
-    height: 86px;
-    max-width: 340px;
+    width: 100%;
+    color: var(--secondary-color);
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    bottom: 50%;
+    transform: translateY(50%);
+    overflow: hidden;
+
+    h3:first-child {
+      transform: translate(20px, 50%);
+      transition: transform 0.4s ease-in-out;
+    }
+
+    h3:last-child {
+      transform: translateX(-400%);
+      transition: transform 0.4s ease-in-out;
+    }
+
+    .right-header {
+      transform: translateX(400%);
+      transition: transform 0.4s ease-in-out;
+    }
   }
 
-  input {
-    padding: 8px 12px 8px 32px;
-    transition: box-shadow 0.3s ease-in-out;
+  .active footer {
+    bottom: 25px;
 
-    &:hover {
-      box-shadow: 0 32px 36px 0 rgb(0 0 0 / 0.3);
+    transform: translate(0);
+
+    .left-header {
+      margin-left: 20px;
     }
 
-    &:focus {
-      box-shadow: 0 32px 36px 0 rgb(0 0 0 / 0.3);
+    .right-header {
+      margin-right: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1px;
+      transform: translateX(0);
+    }
+
+    h3:first-child {
+      transform: translate(0);
+    }
+
+    h3:last-child {
+      transform: translateX(0);
     }
   }
 
-  button {
-    min-width: 86px;
-    height: 86px;
-
-    &:hover {
-      box-shadow: inset 0 0 0 0 var(--green-color);
-    }
+  h2 {
+    font-size: 32px;
+  }
+  h3 {
+    font-size: 22px;
+  }
+  h4 {
+    font-size: 12px;
+    text-transform: uppercase;
   }
 `;
 export default FindPassion;

@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
+import { links } from '../../utlis/data';
 
 const Sidebar = () => {
   return (
     <Wrapper>
       <ul className="top">
-        <li>Find passion</li>
-        <li>Categories</li>
-        <li>Skilss</li>
-        <li>Customer</li>
+        {links.map((item) => {
+          return <li key={item.id}>{item.text}</li>;
+        })}
       </ul>
       <footer className="bottom">
         <button className="connect-btn white">Login</button>
@@ -30,7 +30,9 @@ const Wrapper = styled.aside`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow: hidden;
+  overflow: scroll;
+
+  transition: height 0.4s ease-in-out;
 
   &.active {
     width: 100%;
