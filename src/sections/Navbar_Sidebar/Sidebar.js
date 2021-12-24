@@ -24,11 +24,9 @@ const Sidebar = () => {
         <button className="connect-btn white" onClick={closeSidebar}>
           Login
         </button>
-        <span className="hover-btn">
-          <button className="connect-btn" onClick={closeSidebar}>
-            Free Trial
-          </button>
-        </span>
+        <button className="connect-btn" onClick={closeSidebar}>
+          Free Trial
+        </button>
       </footer>
     </Wrapper>
   );
