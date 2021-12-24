@@ -2,10 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import { categoriesImages } from '../../utlis/data';
 import { ImArrowUpRight2 } from 'react-icons/im';
+import { useGlobalContext } from '../../context';
 
 const Content = () => {
+  const { categoriesActive } = useGlobalContext();
   return (
-    <Wrapper>
+    <Wrapper className={categoriesActive ? 'active' : null}>
       {categoriesImages.map((item) => {
         const { id, title, date, img } = item;
         return (
@@ -32,6 +34,7 @@ const Wrapper = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   column-gap: 32px;
+  transition: align-items 3s ease-in-out;
 
   article {
     height: 90%;
@@ -107,6 +110,18 @@ const Wrapper = styled.div`
     h3 {
       margin-top: 24px;
       font-size: 24px;
+    }
+  }
+
+  @media (min-width: 998px) {
+    padding: 0;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+
+    /* position sticky */
+
+    .active {
+      height: 100%;
     }
   }
 `;
