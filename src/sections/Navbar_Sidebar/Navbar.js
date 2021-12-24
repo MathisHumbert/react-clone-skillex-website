@@ -41,7 +41,7 @@ const Navbar = () => {
 const Wrapper = styled.nav`
   width: 100%;
   padding: 20px 24px 60px 24px;
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
   display: flex;
   align-items: center;

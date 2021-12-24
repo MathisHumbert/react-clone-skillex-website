@@ -28,6 +28,7 @@ const Footer = () => {
 const Wrapper = styled.article`
   border-top: 1px solid rgba(30, 30, 47, 0.1);
   padding-top: 24px;
+  width: 100%;
 
   ul {
     width: 100%;
@@ -84,6 +85,13 @@ const Wrapper = styled.article`
 
     .copy {
       padding-top: 0;
+    }
+
+    ul {
+      justify-content: flex-end;
+    }
+    .copy {
+      justify-content: flex-start;
     }
   }
 `;

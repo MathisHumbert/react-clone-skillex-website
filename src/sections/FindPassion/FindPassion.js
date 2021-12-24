@@ -192,7 +192,7 @@ const Wrapper = styled.section`
 
     .right {
       width: calc(100vw - 580px);
-      max-width: 700px;
+      max-width: 880px;
       max-height: none;
       height: 590px;
       margin-left: -60px;
