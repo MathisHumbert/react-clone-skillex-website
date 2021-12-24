@@ -93,6 +93,9 @@ border: 1px solid transparent;
 
 const Wrapper = styled.section`
   padding: 36px 0;
+  max-width: 1280px;
+  margin: 0 auto;
+  overflow: hidden;
 
   h1 {
     font-size: 40px;

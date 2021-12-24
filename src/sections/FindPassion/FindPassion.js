@@ -113,16 +113,19 @@ const Wrapper = styled.section`
     overflow: hidden;
 
     h3:first-child {
-      transform: translate(20px, 50%);
-      transition: transform 0.4s ease-in-out;
+      transform: translateX(20px);
+      transition: transform 0.1s ease-in-out;
     }
 
     h3:last-child {
+      position: absolute;
       transform: translateX(-400%);
       transition: transform 0.4s ease-in-out;
     }
 
     .right-header {
+      position: absolute;
+      right: 0;
       transform: translateX(400%);
       transition: transform 0.4s ease-in-out;
     }
@@ -142,14 +145,16 @@ const Wrapper = styled.section`
       flex-direction: column;
       align-items: center;
       gap: 1px;
+      position: unset;
       transform: translateX(0);
     }
 
     h3:first-child {
-      transform: translate(0);
+      transform: translateX(0);
     }
 
     h3:last-child {
+      position: unset;
       transform: translateX(0);
     }
   }
@@ -168,6 +173,95 @@ const Wrapper = styled.section`
   @media (min-width: 768px) {
     .right {
       max-height: 500px;
+    }
+  }
+
+  @media (min-width: 998px) {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+    height: 590px;
+    gap: 0;
+    padding-bottom: 64px;
+
+    .left {
+      padding-top: 56px;
+      width: 450px;
+      height: 590px;
+    }
+
+    .right {
+      width: calc(100vw - 580px);
+      max-width: 700px;
+      max-height: none;
+      height: 590px;
+      margin-left: -60px;
+      flex-direction: row;
+      gap: 20px;
+    }
+
+    .image-container {
+      width: 100%;
+      height: 100%;
+      flex: 1;
+      transition: flex 0.4s ease-in-out;
+
+      &.active {
+        height: 100%;
+        flex: 4;
+      }
+    }
+
+    footer {
+      bottom: 56px;
+      transform: translateY(-56px);
+      overflow: unset;
+
+      .left-header {
+        width: 100%;
+      }
+
+      h3:first-child {
+        transform: rotate(270deg);
+      }
+    }
+
+    .active footer {
+      transform: translateY(-56px);
+    }
+
+    .image-container:first-child {
+      &.active {
+        h3:first-child {
+          opacity: 1;
+        }
+      }
+      h3:first-child {
+        opacity: 0;
+      }
+      .left-header {
+        margin-left: 60px;
+      }
+    }
+  }
+
+  @media (min-width: 1220px) {
+    h3 {
+      font-size: 34px;
+    }
+
+    .image-container:first-child {
+      .left-header {
+        margin-left: 80px;
+      }
+    }
+
+    footer {
+      transform: translateY(-46px);
+    }
+
+    .active footer {
+      transform: translateY(-46px);
     }
   }
 `;

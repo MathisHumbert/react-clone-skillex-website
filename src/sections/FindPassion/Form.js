@@ -62,5 +62,10 @@ const Wrapper = styled.form`
       box-shadow: inset 0 120px 0 0 var(--green-color);
     }
   }
+
+  @media (min-width: 998px) {
+    left: 80px;
+    bottom: 56px;
+  }
 `;
 export default Form;
