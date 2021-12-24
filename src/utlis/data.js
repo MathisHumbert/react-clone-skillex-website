@@ -170,11 +170,11 @@ const links = [
     text: 'Categories',
   },
   {
-    id: 1,
+    id: 3,
     text: 'Skills',
   },
   {
-    id: 1,
+    id: 4,
     text: 'Customer',
   },
 ];

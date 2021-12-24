@@ -129,7 +129,6 @@ const Wrapper = styled.section`
 
   .active footer {
     bottom: 25px;
-
     transform: translate(0);
 
     .left-header {
@@ -163,6 +162,12 @@ const Wrapper = styled.section`
   h4 {
     font-size: 12px;
     text-transform: uppercase;
+  }
+
+  @media (min-width: 768px) {
+    .right {
+      max-height: 500px;
+    }
   }
 `;
 export default FindPassion;

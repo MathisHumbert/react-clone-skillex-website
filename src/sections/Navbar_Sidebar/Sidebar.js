@@ -1,13 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 import { links } from '../../utlis/data';
+import { useGlobalContext } from '../../context';
 
 const Sidebar = () => {
+  const { isSidebarOpen, closeSidebar } = useGlobalContext();
   return (
-    <Wrapper>
+    <Wrapper className={isSidebarOpen ? 'active' : null}>
       <ul className="top">
         {links.map((item) => {
-          return <li key={item.id}>{item.text}</li>;
+          return (
+            <li key={item.id} onClick={closeSidebar}>
+              <a href="#">{item.text}</a>
+            </li>
+          );
         })}
       </ul>
       <footer className="bottom">
@@ -22,8 +28,8 @@ const Sidebar = () => {
 
 const Wrapper = styled.aside`
   position: fixed;
-  width: 0;
-  height: 100vh;
+  width: 100%;
+  height: 0;
   top: 0;
   z-index: 10;
   background: var(--secondary-color);
@@ -31,12 +37,17 @@ const Wrapper = styled.aside`
   flex-direction: column;
   justify-content: space-between;
   overflow: scroll;
-
-  transition: height 0.4s ease-in-out;
+  transition: height 0.4s ease-in-out, padding 0.4s ease-in-out;
+  padding: 0 24px;
 
   &.active {
-    width: 100%;
+    height: 100vh;
     padding: 100px 24px 24px 24px;
+
+    a {
+      display: block;
+      transform: translateX(0%);
+    }
   }
 
   li {
@@ -50,8 +61,23 @@ const Wrapper = styled.aside`
     }
   }
 
+  a {
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-in-out;
+  }
+
+  ul li:nth-child(2) a {
+    transition-delay: 0.2s;
+  }
+  ul li:nth-child(3) a {
+    transition-delay: 0.4s;
+  }
+  ul li:nth-child(4) a {
+    transition-delay: 0.6s;
+  }
+
   .bottom {
-    padding: 24px;
+    padding-top: 24px;
     border-top: 1px solid rgba(30, 30, 47, 0.1);
   }
 
