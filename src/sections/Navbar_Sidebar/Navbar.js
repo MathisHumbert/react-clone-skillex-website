@@ -29,16 +29,6 @@ const Wrapper = styled.nav`
   justify-content: space-between;
 
   .toggle-btn {
-    width: 32px;
-    height: 32px;
-    line-height: 0;
-    padding: 0;
-    background: var(--primary-color);
-    color: var(--secondary-color);
-  }
-
-  .toggle-icon {
-    font-size: 26px;
   }
 `;
 export default Navbar;

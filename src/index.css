@@ -126,6 +126,19 @@ a {
   transition: box-shadow 0.2s ease-in-out;
 }
 
+.toggle-btn {
+  width: 32px;
+  height: 32px;
+  line-height: 0;
+  padding: 0;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.toggle-icon {
+  font-size: 26px;
+}
+
 @media screen and (min-width: 768px) {
   .section {
     padding: 64px 24px;

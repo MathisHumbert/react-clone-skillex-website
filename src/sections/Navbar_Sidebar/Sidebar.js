@@ -2,11 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import { links } from '../../utlis/data';
 import { useGlobalContext } from '../../context';
+import { IoClose } from 'react-icons/io5';
 
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useGlobalContext();
   return (
     <Wrapper className={isSidebarOpen ? 'active' : null}>
+      <button type="button" className="toggle-btn" onClick={closeSidebar}>
+        <IoClose className="toggle-icon" />
+      </button>
       <ul className="top">
         {links.map((item) => {
           return (
@@ -17,9 +21,13 @@ const Sidebar = () => {
         })}
       </ul>
       <footer className="bottom">
-        <button className="connect-btn white">Login</button>
+        <button className="connect-btn white" onClick={closeSidebar}>
+          Login
+        </button>
         <span className="hover-btn">
-          <button className="connect-btn">Free Trial</button>
+          <button className="connect-btn" onClick={closeSidebar}>
+            Free Trial
+          </button>
         </span>
       </footer>
     </Wrapper>
@@ -48,6 +56,12 @@ const Wrapper = styled.aside`
       display: block;
       transform: translateX(0%);
     }
+  }
+
+  .toggle-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
   }
 
   li {
