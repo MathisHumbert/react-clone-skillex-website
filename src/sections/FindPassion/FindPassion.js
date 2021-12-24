@@ -47,7 +47,7 @@ const FindPassion = () => {
 const Wrapper = styled.section`
   width: 100%;
   display: grid;
-  gap: 60px;
+  gap: 30px;
   padding-bottom: 182px;
   position: relative;
 
@@ -61,7 +61,7 @@ const Wrapper = styled.section`
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    max-height: 600px;
+    max-height: 400px;
   }
 
   .image-container {

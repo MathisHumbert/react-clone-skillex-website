@@ -117,6 +117,9 @@ const Wrapper = styled.section`
     padding: 1rem;
     border-radius: var(--radius);
     margin: 0 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     &:first-child {
       margin-left: 24px;
@@ -126,8 +129,8 @@ const Wrapper = styled.section`
     }
 
     footer {
-      margin-top: 2rem;
       display: flex;
+      align-items: center;
       gap: 12px;
     }
 
@@ -168,6 +171,15 @@ const Wrapper = styled.section`
 
     &.clicked {
       animation: ${buttonActive} 0.6s ease-in-out 1;
+    }
+  }
+
+  @media (min-width: 768px) {
+    padding: 64px 0;
+    .reviews-item {
+      height: 290px;
+      max-height: 290px;
+      padding: 24px;
     }
   }
 `;

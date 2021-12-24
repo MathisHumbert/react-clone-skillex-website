@@ -12,5 +12,7 @@ const ContactFooter = () => {
   );
 };
 
-const Wrapper = styled.footer``;
+const Wrapper = styled.footer`
+  padding-bottom: 24px;
+`;
 export default ContactFooter;

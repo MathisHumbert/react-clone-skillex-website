@@ -26,10 +26,11 @@ const Footer = () => {
 };
 
 const Wrapper = styled.article`
+  border-top: 1px solid rgba(30, 30, 47, 0.1);
+  padding-top: 24px;
+
   ul {
     width: 100%;
-    padding-top: 24px;
-    border-top: 1px solid rgba(30, 30, 47, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -73,9 +74,16 @@ const Wrapper = styled.article`
     img {
       width: 30px;
     }
+  }
 
-    p {
-      font-size: 14px;
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+
+    .copy {
+      padding-top: 0;
     }
   }
 `;

@@ -46,15 +46,13 @@ const Wrapper = styled.header`
     flex-direction: column;
     align-items: center;
     list-style-type: none;
-    color: #1e1e2f;
-    font-size: 16px;
     cursor: pointer;
     gap: 3px;
 
     span {
       width: 100%;
       height: 2px;
-      background: #1e1e2f;
+      background: var(--primary-color);
       opacity: 0;
       transform: translateY(400%);
       transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
@@ -71,6 +69,10 @@ const Wrapper = styled.header`
         transform: translateY(0%);
       }
     }
+  }
+
+  @media (min-width: 768px) {
+    margin-bottom: 56px;
   }
 `;
 export default Header;

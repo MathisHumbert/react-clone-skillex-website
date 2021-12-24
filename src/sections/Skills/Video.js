@@ -29,5 +29,9 @@ const Wrapper = styled.article`
     top: 0;
     transform: translateY(-50%);
   }
+
+  @media (min-width: 768px) {
+    flex: 1;
+  }
 `;
 export default Video;

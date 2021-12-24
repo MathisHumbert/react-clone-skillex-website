@@ -55,10 +55,6 @@ const Wrapper = styled.ul`
     margin-bottom: 16px;
   }
 
-  p {
-    font-size: 14px;
-  }
-
   .list-line {
     position: absolute;
     left: 28px;
@@ -68,6 +64,10 @@ const Wrapper = styled.ul`
     border-left: 1px dashed rgba(30, 30, 47, 0.6);
     margin-top: 71px;
     height: 48px;
+  }
+
+  @media (min-width: 768px) {
+    flex: 1;
   }
 `;
 export default Info;

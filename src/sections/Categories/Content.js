@@ -38,6 +38,7 @@ const Wrapper = styled.div`
     display: grid;
     grid-template-rows: 70% 15% 15%;
     cursor: pointer;
+    max-height: 340px;
 
     &:hover {
       h3 {
@@ -75,7 +76,6 @@ const Wrapper = styled.div`
   h3,
   p {
     align-self: flex-end;
-    color: var(--primary-color);
   }
 
   h3 {
@@ -83,8 +83,31 @@ const Wrapper = styled.div`
     transition: color 0.2s ease-in-out;
   }
 
-  p {
-    font-size: 12px;
+  @media (min-width: 480px) {
+    h3 {
+      font-size: 22px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: none;
+    gap: 60px;
+
+    article {
+      height: 100%;
+      display: block;
+      max-height: none;
+    }
+
+    p {
+      margin-top: 12px;
+    }
+
+    h3 {
+      margin-top: 24px;
+      font-size: 24px;
+    }
   }
 `;
 export default Content;

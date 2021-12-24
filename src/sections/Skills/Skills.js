@@ -30,5 +30,16 @@ const Wrapper = styled.section`
     }
     margin-bottom: 68px;
   }
+
+  @media screen {
+    header {
+      h1 {
+        max-width: 440px;
+      }
+      p {
+        max-width: 540px;
+      }
+    }
+  }
 `;
 export default Skills;

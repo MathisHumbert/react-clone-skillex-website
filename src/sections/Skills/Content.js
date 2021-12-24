@@ -12,5 +12,13 @@ const Content = () => {
   );
 };
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  @media (min-width: 768px) {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+  }
+`;
 export default Content;

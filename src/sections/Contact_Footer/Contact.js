@@ -37,14 +37,6 @@ const Wrapper = styled.article`
     width: 124px;
   }
 
-  form {
-    height: 64px;
-    max-width: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
   ul {
     display: grid;
     grid-template-columns: auto auto;
@@ -56,6 +48,14 @@ const Wrapper = styled.article`
   h3 {
     font-size: 16px;
     margin-bottom: 16px;
+  }
+
+  form {
+    height: 64px;
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   input {
@@ -76,9 +76,26 @@ const Wrapper = styled.article`
     min-width: 64px;
     height: 64px;
     font-size: 14px;
+    box-shadow: inset 0 64px 0 0 var(--green-color);
 
     &:hover {
       box-shadow: inset 0 0 0 0 var(--green-color);
+    }
+  }
+
+  @media (min-width: 768px) {
+    margin-bottom: 56px;
+
+    .form-container {
+      margin-top: 24px;
+    }
+
+    h3 {
+      font-size: 20px;
+    }
+
+    button {
+      font-size: 16px;
     }
   }
 `;

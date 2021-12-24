@@ -19,7 +19,7 @@ const Wrapper = styled.form`
   left: 24px;
   bottom: 36px;
   height: 86px;
-  max-width: 340px;
+  width: 340px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -40,9 +40,26 @@ const Wrapper = styled.form`
   button {
     min-width: 86px;
     height: 86px;
+    box-shadow: inset 0 86px 0 0 var(--green-color);
 
     &:hover {
       box-shadow: inset 0 0 0 0 var(--green-color);
+    }
+  }
+
+  @media (min-width: 768px) {
+    height: 120px;
+    width: 450px;
+
+    input {
+      padding: 8px 12px 8px 50px;
+    }
+
+    button {
+      min-width: 120px;
+      height: 120px;
+      font-size: 34px;
+      box-shadow: inset 0 120px 0 0 var(--green-color);
     }
   }
 `;
