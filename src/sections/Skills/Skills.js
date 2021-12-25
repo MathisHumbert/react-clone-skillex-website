@@ -21,6 +21,7 @@ const Wrapper = styled.section`
   position: relative;
 
   header {
+    margin-bottom: 68px;
     h1 {
       font-size: 40px;
       margin-bottom: 40px;
@@ -28,7 +29,6 @@ const Wrapper = styled.section`
     p {
       font-size: 20px;
     }
-    margin-bottom: 68px;
   }
 
   @media (min-width: 768px) {
@@ -37,7 +37,8 @@ const Wrapper = styled.section`
         max-width: 440px;
       }
       p {
-        max-width: 540px;
+        max-width: 520px;
+        line-height: 2rem;
       }
     }
   }
@@ -45,8 +46,16 @@ const Wrapper = styled.section`
   @media (min-width: 998px) {
     header {
       display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+
       h1 {
         width: 22vw;
+        margin-bottom: 0;
+      }
+
+      p {
+        margin-right: 4vw;
       }
     }
   }

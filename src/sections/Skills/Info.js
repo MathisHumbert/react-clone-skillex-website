@@ -69,5 +69,10 @@ const Wrapper = styled.ul`
   @media (min-width: 768px) {
     flex: 1;
   }
+
+  @media (min-width: 998px) {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
 `;
 export default Info;

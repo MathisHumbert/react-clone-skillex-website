@@ -33,5 +33,11 @@ const Wrapper = styled.article`
   @media (min-width: 768px) {
     flex: 1;
   }
+  @media (min-width: 998px) {
+    grid-column: 2 / 3;
+    img {
+      height: 80%;
+    }
+  }
 `;
 export default Video;

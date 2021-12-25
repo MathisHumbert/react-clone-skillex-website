@@ -20,5 +20,11 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: space-between;
   }
+
+  @media (min-width: 998px) {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: none;
+  }
 `;
 export default Content;
