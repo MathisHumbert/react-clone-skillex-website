@@ -24,7 +24,8 @@ const Wrapper = styled.div`
   @media (min-width: 998px) {
     display: grid;
     grid-template-columns: auto auto;
-    align-items: none;
+    align-items: center;
+    justify-items: center;
   }
 `;
 export default Content;

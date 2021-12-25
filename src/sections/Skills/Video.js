@@ -35,8 +35,11 @@ const Wrapper = styled.article`
   }
   @media (min-width: 998px) {
     grid-column: 2 / 3;
+    display: grid;
+    place-items: center;
+
     img {
-      height: 80%;
+      height: 100%;
     }
   }
 `;
