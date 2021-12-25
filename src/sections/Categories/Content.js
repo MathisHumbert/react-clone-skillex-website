@@ -118,6 +118,22 @@ const Wrapper = styled.div`
     grid-template-columns: repeat(4, 1fr);
     gap: 32px;
 
+    article {
+      overflow: hidden;
+      height: fit-content;
+
+      &:hover {
+        span {
+          transform: translateY(0);
+        }
+      }
+    }
+
+    span {
+      transform: translateY(-200%);
+      transition: transform 0.4s ease-in-out;
+    }
+
     /* position sticky */
 
     .active {

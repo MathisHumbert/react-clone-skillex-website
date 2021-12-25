@@ -31,13 +31,22 @@ const Wrapper = styled.section`
     margin-bottom: 68px;
   }
 
-  @media screen {
+  @media (min-width: 768px) {
     header {
       h1 {
         max-width: 440px;
       }
       p {
         max-width: 540px;
+      }
+    }
+  }
+
+  @media (min-width: 998px) {
+    header {
+      display: flex;
+      h1 {
+        width: 22vw;
       }
     }
   }
