@@ -31,4 +31,5 @@ export default App;
 
 // Sticky position
 // Slider Off and Display Both
-// Sticky position
+// Footer display
+// Locomotive scrool
