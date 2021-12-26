@@ -28,3 +28,5 @@ function App() {
 
 const Wrapper = styled.main``;
 export default App;
+
+// Sticky position
