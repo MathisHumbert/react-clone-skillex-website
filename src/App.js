@@ -30,3 +30,5 @@ const Wrapper = styled.main``;
 export default App;
 
 // Sticky position
+// Slider Off and Display Both
+// Sticky position
