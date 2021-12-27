@@ -34,7 +34,7 @@ const Sidebar = () => {
 
 const Wrapper = styled.aside`
   position: fixed;
-  width: 100%;
+  width: 100vw;
   height: 0;
   top: 0;
   z-index: 10;

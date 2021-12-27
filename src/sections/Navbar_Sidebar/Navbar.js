@@ -10,28 +10,30 @@ const Navbar = () => {
 
   return (
     <Wrapper>
-      <div className="left">
-        <img src={logo} alt="main-logo" />
-        <ul>
-          {links.map((link) => {
-            const { id, text } = link;
-            return (
-              <li key={id}>
-                <a href="#">{text}</a>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-      <div className="right">
-        <button type="button" className="toggle-btn" onClick={openSidebar}>
-          <IoReorderTwo className="toggle-icon" />
-        </button>
-        <div className="connect-container">
-          <li>
-            <a href="#">Login</a>
-          </li>
-          <button className="connect-btn">Free Trial</button>
+      <div className="nav-container">
+        <div className="left">
+          <img src={logo} alt="main-logo" />
+          <ul>
+            {links.map((link) => {
+              const { id, text } = link;
+              return (
+                <li key={id}>
+                  <a href="#">{text}</a>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        <div className="right">
+          <button type="button" className="toggle-btn" onClick={openSidebar}>
+            <IoReorderTwo className="toggle-icon" />
+          </button>
+          <div className="connect-container">
+            <li>
+              <a href="#">Login</a>
+            </li>
+            <button className="connect-btn">Free Trial</button>
+          </div>
         </div>
       </div>
     </Wrapper>
@@ -39,13 +41,24 @@ const Navbar = () => {
 };
 
 const Wrapper = styled.nav`
-  width: 100%;
-  padding: 20px 24px 60px 24px;
-  max-width: 1440px;
+  position: absolute;
+  width: 100vw;
+  padding: 20px 24px;
   margin: 0 auto;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  z-index: 3;
+  border: 1px solid red;
+  top: 0;
+  left: 0;
+
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1440px;
+  }
 
   img {
     cursor: pointer;
@@ -66,11 +79,22 @@ const Wrapper = styled.nav`
   @media (min-width: 998px) {
     padding: 38px 80px;
 
+    .fixed {
+      position: fixed;
+    }
+
     .left {
       display: flex;
       align-items: center;
-      gap: 125px;
+      gap: 60px;
       width: 100%;
+      flex: 3;
+      border: 1px solid red;
+    }
+
+    .right {
+      width: fit-content;
+      border: 1px solid red;
     }
 
     .connect-container {
@@ -81,14 +105,10 @@ const Wrapper = styled.nav`
 
     ul {
       display: flex;
-      flex-wrap: wrap;
-      gap: 1rem 2rem;
+      gap: 22px;
       align-items: center;
-      max-width: 240px;
-    }
-
-    li {
-      flex: 1;
+      justify-content: flex-start;
+      width: 100%;
     }
 
     a {
@@ -102,17 +122,6 @@ const Wrapper = styled.nav`
 
     .toggle-btn {
       display: none;
-    }
-  }
-
-  @media (min-width: 1220px) {
-    ul {
-      gap: 22px;
-      max-width: none;
-    }
-
-    li {
-      flex: none;
     }
   }
 `;

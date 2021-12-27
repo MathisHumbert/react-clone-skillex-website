@@ -49,7 +49,7 @@ const Wrapper = styled.section`
   display: grid;
   gap: 30px;
   padding-bottom: 182px;
-  padding-top: 0;
+  padding-top: 118px;
   position: relative;
 
   h1 {
@@ -180,9 +180,10 @@ const Wrapper = styled.section`
     width: 100%;
     display: grid;
     grid-template-columns: auto auto;
-    height: 590px;
+    height: 715px;
     gap: 0;
     padding-bottom: 64px;
+    padding-top: 125px;
 
     .left {
       padding-top: 56px;
@@ -205,6 +206,7 @@ const Wrapper = styled.section`
       height: 100%;
       flex: 1;
       transition: flex 0.4s ease-in-out;
+      overflow: hidden;
 
       &.active {
         height: 100%;

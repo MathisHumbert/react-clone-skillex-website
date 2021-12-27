@@ -4,7 +4,7 @@ const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [categoriesActive, setCategoriesActive] = useState(false);
+  const [isNavbarFixed, setIsNavbarFixed] = useState(false);
 
   const closeSidebar = () => {
     setIsSidebarOpen(false);
@@ -14,10 +14,10 @@ const AppProvider = ({ children }) => {
   };
 
   const handleScroll = (e) => {
-    if (window.scrollY > 715) {
-      setCategoriesActive(true);
+    if (window.scrollY > 130) {
+      setIsNavbarFixed(true);
     } else {
-      setCategoriesActive(false);
+      setIsNavbarFixed(false);
     }
   };
 
@@ -28,7 +28,7 @@ const AppProvider = ({ children }) => {
 
   return (
     <AppContext.Provider
-      value={{ isSidebarOpen, closeSidebar, openSidebar, categoriesActive }}
+      value={{ isSidebarOpen, closeSidebar, openSidebar, isNavbarFixed }}
     >
       {children}
     </AppContext.Provider>
