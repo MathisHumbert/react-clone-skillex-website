@@ -7,9 +7,10 @@ const Slider = () => {
   let trigger = true;
 
   const slider = () => {
-    console.log('passed');
+    if (window.innerWidth >= 998) return;
     const firstY = first.current.getBoundingClientRect().y;
     const secondY = second.current.getBoundingClientRect().y;
+
     if (firstY > secondY) {
       second.current.style.opacity = 1;
       first.current.style.transform = 'translateY(100%)';
@@ -33,12 +34,12 @@ const Slider = () => {
     }
   };
 
-  // useEffect(() => {
-  //   let sliderTimeout = setInterval(() => {
-  //     slider();
-  //   }, 3000);
-  //   return () => clearInterval(sliderTimeout);
-  // }, [trigger]);
+  useEffect(() => {
+    let sliderTimeout = setInterval(() => {
+      slider();
+    }, 3000);
+    return () => clearInterval(sliderTimeout);
+  }, [trigger]);
 
   return (
     <Wrapper className="content">
@@ -88,12 +89,17 @@ const Wrapper = styled.div`
     p {
       font-size: 12px;
       text-transform: uppercase;
+      line-height: 12px;
     }
   }
 
   .second {
     transform: translateY(-100%);
     opacity: 0;
+  }
+
+  @media (min-width: 998px) {
+    display: none;
   }
 `;
 

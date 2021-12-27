@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import img from '../../images/1290604435-1a41ad0506cf2496dab491080f83e4dff26dc61eec8bf5f23.jpeg';
+import Block from './Block';
 import Slider from './Slider';
 
 const Video = () => {
@@ -8,6 +9,7 @@ const Video = () => {
     <Wrapper>
       <img src={img} alt="main-img" />
       <Slider />
+      <Block />
     </Wrapper>
   );
 };
@@ -16,11 +18,13 @@ const Wrapper = styled.article`
   width: 100%;
   height: 100%;
   position: relative;
+  border-radius: var(--radius);
 
   img {
     width: 100%;
     height: 60%;
     border-radius: var(--radius);
+    object-fit: cover;
   }
 
   .content {

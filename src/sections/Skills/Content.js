@@ -26,6 +26,12 @@ const Wrapper = styled.div`
     grid-template-columns: auto auto;
     align-items: center;
     justify-items: center;
+    gap: 40px;
+    margin-top: 20px;
+  }
+
+  @media (min-width: 1220px) {
+    margin-top: 40px;
   }
 `;
 export default Content;

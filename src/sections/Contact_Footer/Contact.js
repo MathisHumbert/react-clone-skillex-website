@@ -98,5 +98,16 @@ const Wrapper = styled.article`
       font-size: 16px;
     }
   }
+
+  @media (min-width: 998px) {
+    flex-direction: row;
+    gap: 0;
+    align-items: center;
+    justify-content: space-between;
+
+    ul {
+      column-gap: 4rem;
+    }
+  }
 `;
 export default Contact;
