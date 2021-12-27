@@ -2,12 +2,22 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Form = () => {
+  const [value, setValue] = React.useState('');
+
   return (
-    <Wrapper className="contact">
+    <Wrapper
+      className="contact"
+      onSubmit={(e) => {
+        e.preventDefault();
+        setValue('');
+      }}
+    >
       <input
         type="text"
         placeholder="Find your passion"
         className="contact-input"
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
       />
       <button type="submit">Go</button>
     </Wrapper>

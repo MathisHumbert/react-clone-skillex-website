@@ -4,6 +4,8 @@ import logo from '../../images/617fa55008f302348b1f7703_logo.svg';
 import { links } from '../../utlis/data';
 
 const Contact = () => {
+  const [value, setValue] = React.useState('');
+
   return (
     <Wrapper>
       <img src={logo} alt="main-logo" />
@@ -14,11 +16,19 @@ const Contact = () => {
       </ul>
       <div className="form-container">
         <h3>Join our community</h3>
-        <form className="contact">
+        <form
+          className="contact"
+          onSubmit={(e) => {
+            e.preventDefault();
+            setValue('');
+          }}
+        >
           <input
             type="text"
             placeholder="Enter your email"
             className="contact-input"
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
           />
           <button type="submit">Go</button>
         </form>

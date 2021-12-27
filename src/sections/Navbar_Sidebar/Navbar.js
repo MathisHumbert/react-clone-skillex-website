@@ -7,9 +7,30 @@ import { links } from '../../utlis/data';
 
 const Navbar = () => {
   const { openSidebar } = useGlobalContext();
+  const navbar = React.useRef(null);
+
+  const handleScroll = () => {
+    const nav = navbar.current;
+    if (window.innerWidth <= 998) return;
+
+    if (window.scrollY > 130) {
+      nav.style.position = 'fixed';
+      nav.style.paddingTop = '18px';
+      nav.style.paddingBottom = '18px';
+    } else {
+      nav.style.position = 'absolute';
+      nav.style.paddingTop = '38px';
+      nav.style.paddingBottom = '38px';
+    }
+  };
+
+  React.useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <Wrapper>
+    <Wrapper ref={navbar}>
       <div className="nav-container">
         <div className="left">
           <img src={logo} alt="main-logo" />
@@ -42,15 +63,16 @@ const Navbar = () => {
 
 const Wrapper = styled.nav`
   position: absolute;
-  width: 100vw;
+  width: 100%;
   padding: 20px 24px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   z-index: 3;
-  border: 1px solid red;
+  background: var(--secondary-color);
   top: 0;
   left: 0;
+  transition: transform 2s ease-in-out;
 
   .nav-container {
     display: flex;
@@ -79,7 +101,7 @@ const Wrapper = styled.nav`
   @media (min-width: 998px) {
     padding: 38px 80px;
 
-    .fixed {
+    &.fixed {
       position: fixed;
     }
 
@@ -89,12 +111,10 @@ const Wrapper = styled.nav`
       gap: 60px;
       width: 100%;
       flex: 3;
-      border: 1px solid red;
     }
 
     .right {
       width: fit-content;
-      border: 1px solid red;
     }
 
     .connect-container {

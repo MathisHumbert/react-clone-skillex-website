@@ -100,5 +100,9 @@ const Wrapper = styled.aside`
     color: var(--primary-color);
     margin-right: 1rem;
   }
+
+  @media (min-width: 998px) {
+    display: none;
+  }
 `;
 export default Sidebar;
