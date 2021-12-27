@@ -134,8 +134,6 @@ const Wrapper = styled.div`
       transition: transform 0.4s ease-in-out;
     }
 
-    /* position sticky */
-
     .active {
       height: 100%;
     }
