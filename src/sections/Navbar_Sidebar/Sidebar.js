@@ -5,7 +5,7 @@ import { useGlobalContext } from '../../context';
 import { IoClose } from 'react-icons/io5';
 
 const Sidebar = () => {
-  const { isSidebarOpen, closeSidebar } = useGlobalContext();
+  const { isSidebarOpen, closeSidebar, scrollLinks } = useGlobalContext();
   return (
     <Wrapper className={isSidebarOpen ? 'active' : null}>
       <button type="button" className="toggle-btn" onClick={closeSidebar}>
@@ -15,7 +15,7 @@ const Sidebar = () => {
         {links.map((item) => {
           return (
             <li key={item.id} onClick={closeSidebar}>
-              <a href="#">{item.text}</a>
+              <p onClick={() => scrollLinks(item.url)}>{item.text}</p>
             </li>
           );
         })}
@@ -50,7 +50,7 @@ const Wrapper = styled.aside`
     height: 100vh;
     padding: 100px 24px 24px 24px;
 
-    a {
+    p {
       display: block;
       transform: translateX(0%);
     }
@@ -73,18 +73,18 @@ const Wrapper = styled.aside`
     }
   }
 
-  a {
+  p {
     transform: translateX(-100%);
     transition: transform 0.4s ease-in-out;
   }
 
-  ul li:nth-child(2) a {
+  ul li:nth-child(2) p {
     transition-delay: 0.2s;
   }
-  ul li:nth-child(3) a {
+  ul li:nth-child(3) p {
     transition-delay: 0.4s;
   }
-  ul li:nth-child(4) a {
+  ul li:nth-child(4) p {
     transition-delay: 0.6s;
   }
 

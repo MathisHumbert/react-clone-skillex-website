@@ -1,12 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useGlobalContext } from '../../context';
 import Content from './Content';
 
 const Skills = () => {
+  const { skills } = useGlobalContext();
+
   return (
-    <Wrapper className="section">
+    <Wrapper className="section" ref={skills}>
       <header>
-        <h1>Get the skills you need for a job that is in demand.</h1>
+        <h1 onClick={() => console.log(skills)}>
+          Get the skills you need for a job that is in demand.
+        </h1>
         <p>
           The modern labor market dictates its own terms. Today, to be a
           competitive specialist requires more than professional skills

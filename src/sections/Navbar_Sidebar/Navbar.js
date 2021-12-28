@@ -6,14 +6,17 @@ import { useGlobalContext } from '../../context';
 import { links } from '../../utlis/data';
 
 const Navbar = () => {
-  const { openSidebar } = useGlobalContext();
+  const { openSidebar, scrollLinks } = useGlobalContext();
   const navbar = React.useRef(null);
 
   const handleScroll = () => {
     const nav = navbar.current;
-    if (window.innerWidth <= 998) return;
-
-    if (window.scrollY > 130) {
+    console.log(window.innerWidth);
+    if (window.innerWidth <= 998) {
+      nav.style.position = 'absolute';
+      nav.style.paddingTop = '20px';
+      nav.style.paddingBottom = '20px';
+    } else if (window.scrollY > 130) {
       nav.style.position = 'fixed';
       nav.style.paddingTop = '18px';
       nav.style.paddingBottom = '18px';
@@ -36,10 +39,10 @@ const Navbar = () => {
           <img src={logo} alt="main-logo" />
           <ul>
             {links.map((link) => {
-              const { id, text } = link;
+              const { id, text, url } = link;
               return (
-                <li key={id}>
-                  <a href="#">{text}</a>
+                <li key={id} onClick={() => scrollLinks(url)}>
+                  {text}
                 </li>
               );
             })}
@@ -131,7 +134,7 @@ const Wrapper = styled.nav`
       width: 100%;
     }
 
-    a {
+    li {
       box-shadow: inset 0 0 0 0 var(--green-color);
       transition: box-shadow 0.2s ease-in-out;
 

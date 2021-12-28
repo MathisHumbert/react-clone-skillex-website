@@ -2,8 +2,10 @@ import React, { useRef, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { reviewsData } from '../../utlis/data';
 import { ImArrowLeft2, ImArrowRight2 } from 'react-icons/im';
+import { useGlobalContext } from '../../context';
 
 const Reviews = () => {
+  const { customer } = useGlobalContext();
   const slider = useRef(null);
   const review = useRef(null);
   const [sliderValue, setSliderValue] = useState(0);
@@ -42,7 +44,7 @@ const Reviews = () => {
   };
 
   return (
-    <Wrapper>
+    <Wrapper ref={customer}>
       <h1>What our customer say.</h1>
       <article className="slider" ref={slider}>
         {reviewsData.map((item) => {

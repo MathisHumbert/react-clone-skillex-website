@@ -163,18 +163,22 @@ const reviewsData = [
 const links = [
   {
     id: 1,
+    url: 'findPassion',
     text: 'Find passion',
   },
   {
     id: 2,
+    url: 'categories',
     text: 'Categories',
   },
   {
     id: 3,
+    url: 'skills',
     text: 'Skills',
   },
   {
     id: 4,
+    url: 'customer',
     text: 'Customer',
   },
 ];

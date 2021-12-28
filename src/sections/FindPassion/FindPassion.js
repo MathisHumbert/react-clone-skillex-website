@@ -2,12 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import Form from './Form';
 import { findPassionData } from '../../utlis/data';
+import { useGlobalContext } from '../../context';
 
 const FindPassion = () => {
+  const { findPassion } = useGlobalContext();
   const [id, setId] = React.useState(1);
 
   return (
-    <Wrapper className="section">
+    <Wrapper className="section" ref={findPassion}>
       <article className="left">
         <h1>Watch.</h1>
         <h1>Learn.</h1>
