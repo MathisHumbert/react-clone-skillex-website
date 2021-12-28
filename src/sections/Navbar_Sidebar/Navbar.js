@@ -6,32 +6,8 @@ import { useGlobalContext } from '../../context';
 import { links } from '../../utlis/data';
 
 const Navbar = () => {
-  const { openSidebar, scrollLinks } = useGlobalContext();
-  const navbar = React.useRef(null);
-
-  const handleScroll = () => {
-    const nav = navbar.current;
-    console.log(window.innerWidth);
-    if (window.innerWidth <= 998) {
-      nav.style.position = 'absolute';
-      nav.style.paddingTop = '20px';
-      nav.style.paddingBottom = '20px';
-    } else if (window.scrollY > 130) {
-      nav.style.position = 'fixed';
-      nav.style.paddingTop = '18px';
-      nav.style.paddingBottom = '18px';
-    } else {
-      nav.style.position = 'absolute';
-      nav.style.paddingTop = '38px';
-      nav.style.paddingBottom = '38px';
-    }
-  };
-
-  React.useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
+  const { openSidebar, scrollLinks, navbar, activeLink } = useGlobalContext();
+  console.log(activeLink);
   return (
     <Wrapper ref={navbar}>
       <div className="nav-container">
@@ -41,7 +17,11 @@ const Navbar = () => {
             {links.map((link) => {
               const { id, text, url } = link;
               return (
-                <li key={id} onClick={() => scrollLinks(url)}>
+                <li
+                  key={id}
+                  onClick={() => scrollLinks(url)}
+                  className={activeLink === url ? 'active' : null}
+                >
                   {text}
                 </li>
               );
@@ -54,7 +34,7 @@ const Navbar = () => {
           </button>
           <div className="connect-container">
             <li>
-              <a href="#">Login</a>
+              <p>Login</p>
             </li>
             <button className="connect-btn">Free Trial</button>
           </div>
@@ -139,12 +119,22 @@ const Wrapper = styled.nav`
       transition: box-shadow 0.2s ease-in-out;
 
       &:hover {
-        box-shadow: inset 0 -7px 0 0 #97c680;
+        box-shadow: inset 0 -9px 0 0 #97c680;
+      }
+
+      &.active {
+        box-shadow: inset 0 -9px 0 0 #97c680;
       }
     }
 
     .toggle-btn {
       display: none;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .left {
+      gap: 120px;
     }
   }
 `;

@@ -74,8 +74,13 @@ const Wrapper = styled.form`
   }
 
   @media (min-width: 998px) {
+    font-size: 20px;
     left: 80px;
     bottom: 56px;
+
+    input::placeholder {
+      font-size: 20px;
+    }
   }
 `;
 export default Form;
