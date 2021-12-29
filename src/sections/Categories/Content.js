@@ -5,9 +5,8 @@ import { ImArrowUpRight2 } from 'react-icons/im';
 import { useGlobalContext } from '../../context';
 
 const Content = () => {
-  const { categoriesActive } = useGlobalContext();
   return (
-    <Wrapper className={categoriesActive ? 'active' : null}>
+    <Wrapper>
       {categoriesImages.map((item) => {
         const { id, title, date, img } = item;
         return (

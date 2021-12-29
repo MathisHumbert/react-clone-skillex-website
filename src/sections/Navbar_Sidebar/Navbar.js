@@ -6,25 +6,17 @@ import { useGlobalContext } from '../../context';
 import { links } from '../../utlis/data';
 
 const Navbar = () => {
-  const { openSidebar, scrollLinks, navbar, activeLink } = useGlobalContext();
+  const { openSidebar } = useGlobalContext();
 
   return (
-    <Wrapper ref={navbar}>
+    <Wrapper>
       <div className="nav-container">
         <div className="left">
           <img src={logo} alt="main-logo" />
           <ul>
             {links.map((link) => {
               const { id, text, url } = link;
-              return (
-                <li
-                  key={id}
-                  onClick={() => scrollLinks(url)}
-                  className={activeLink === url ? 'active' : null}
-                >
-                  {text}
-                </li>
-              );
+              return <li key={id}>{text}</li>;
             })}
           </ul>
         </div>

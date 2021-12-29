@@ -1,11 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useGlobalContext } from '../../context';
 import logo from '../../images/617fa55008f302348b1f7703_logo.svg';
 import { links } from '../../utlis/data';
 
 const Contact = () => {
-  const { scrollLinks } = useGlobalContext();
   const [value, setValue] = React.useState('');
 
   return (
@@ -13,11 +11,7 @@ const Contact = () => {
       <img src={logo} alt="main-logo" />
       <ul>
         {links.map((item) => {
-          return (
-            <li key={item.id} onClick={() => scrollLinks(item.url)}>
-              {item.text}
-            </li>
-          );
+          return <li key={item.id}>{item.text}</li>;
         })}
       </ul>
       <div className="form-container">
