@@ -13,9 +13,12 @@ const Sidebar = () => {
       </button>
       <ul className="top">
         {links.map((item) => {
+          const { text, id, url } = item;
           return (
-            <li key={item.id} onClick={closeSidebar}>
-              <p>{item.text}</p>
+            <li key={id}>
+              <a href={`#${url}`} data-scroll-to onClick={closeSidebar}>
+                {text}
+              </a>
             </li>
           );
         })}
@@ -50,7 +53,7 @@ const Wrapper = styled.aside`
     height: 100vh;
     padding: 100px 24px 24px 24px;
 
-    p {
+    a {
       display: block;
       transform: translateX(0%);
     }
@@ -73,18 +76,18 @@ const Wrapper = styled.aside`
     }
   }
 
-  p {
+  a {
     transform: translateX(-100%);
     transition: transform 0.4s ease-in-out;
   }
 
-  ul li:nth-child(2) p {
+  ul li:nth-child(2) a {
     transition-delay: 0.2s;
   }
-  ul li:nth-child(3) p {
+  ul li:nth-child(3) a {
     transition-delay: 0.4s;
   }
-  ul li:nth-child(4) p {
+  ul li:nth-child(4) a {
     transition-delay: 0.6s;
   }
 

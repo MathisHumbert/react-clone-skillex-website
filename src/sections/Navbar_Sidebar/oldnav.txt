@@ -9,7 +9,13 @@ const Navbar = () => {
   const { openSidebar } = useGlobalContext();
 
   return (
-    <Wrapper data-scroll-section data-scroll>
+    <Wrapper
+      data-scroll-section
+      data-scroll
+      data-scroll-repeat
+      // data-scroll-sticky
+      // data-scroll-target="#main-container"
+    >
       <div className="nav-container">
         <div className="left">
           <img src={logo} alt="main-logo" />

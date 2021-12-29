@@ -11,7 +11,14 @@ const Contact = () => {
       <img src={logo} alt="main-logo" />
       <ul>
         {links.map((item) => {
-          return <li key={item.id}>{item.text}</li>;
+          const { id, url, text } = item;
+          return (
+            <li key={id}>
+              <a href={`#${url}`} data-scroll-to>
+                {text}
+              </a>
+            </li>
+          );
         })}
       </ul>
       <div className="form-container">

@@ -3,12 +3,12 @@ import useLocalScroll from './utlis/useLocalScroll';
 
 import {
   Sidebar,
-  Navbar,
   FindPassion,
   Categories,
   Skills,
   Reviews,
   ContactFooter,
+  Nav,
 } from './sections';
 
 function App() {
@@ -41,8 +41,8 @@ function App() {
   return (
     <>
       <main id="main-container" data-scroll-container>
-        <Navbar />
         <Sidebar />
+        <Nav />
         <FindPassion />
         <Categories />
         <Skills />
