@@ -28,7 +28,7 @@ function App() {
   useEffect(() => {
     id.current = window.setInterval(() => {
       setTimer((timer) => timer - 1);
-    }, 1000);
+    }, 100);
   }, []);
 
   // run when the timer is done
@@ -40,22 +40,15 @@ function App() {
 
   return (
     <>
-      {preloader ? (
-        <div className="loader-wrapper absolute">
-          <h1>Flirty flowers</h1>
-          <h2>Rio de Janeiro</h2>
-        </div>
-      ) : (
-        <main id="main-container" data-scroll-container>
-          <Navbar />
-          <Sidebar />
-          <FindPassion />
-          <Categories />
-          <Skills />
-          <Reviews />
-          <ContactFooter />
-        </main>
-      )}
+      <main id="main-container" data-scroll-container>
+        <Navbar />
+        <Sidebar />
+        <FindPassion />
+        <Categories />
+        <Skills />
+        <Reviews />
+        <ContactFooter />
+      </main>
     </>
   );
 }

@@ -16,7 +16,13 @@ const Navbar = () => {
           <ul>
             {links.map((link) => {
               const { id, text, url } = link;
-              return <li key={id}>{text}</li>;
+              return (
+                <li key={id}>
+                  <a href={`#${url}`} data-scroll-to>
+                    {text}
+                  </a>
+                </li>
+              );
             })}
           </ul>
         </div>

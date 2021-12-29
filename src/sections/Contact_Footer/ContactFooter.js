@@ -5,7 +5,7 @@ import Footer from './Footer';
 
 const ContactFooter = () => {
   return (
-    <Wrapper className="section" data-scroll-section data-scroll id="customer">
+    <Wrapper className="section" data-scroll-section data-scroll>
       <Contact />
       <Footer />
     </Wrapper>
