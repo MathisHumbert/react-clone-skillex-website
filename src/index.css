@@ -28,7 +28,7 @@ html {
   box-sizing: border-box;
 }
 
-#root {
+#main-container {
   overflow-x: hidden;
   position: relative;
   width: 100%;
@@ -54,6 +54,9 @@ code {
   margin: 0 auto;
 }
 
+.c-scrollbar {
+  z-index: 3;
+}
 button {
   border: 0;
   cursor: pointer;

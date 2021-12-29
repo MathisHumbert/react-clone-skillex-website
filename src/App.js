@@ -1,5 +1,4 @@
-import styled from 'styled-components';
-
+import { useEffect } from 'react';
 import {
   Sidebar,
   Navbar,
@@ -10,26 +9,23 @@ import {
   ContactFooter,
 } from './sections';
 
+import useLocalScroll from './utlis/useLocalScroll';
+
 function App() {
+  useLocalScroll(true);
   return (
     <>
-      <Sidebar />
-      <Wrapper>
-        <Navbar />
+      <Navbar />
+      <main id="main-container" data-scroll-container>
+        <Sidebar />
         <FindPassion />
         <Categories />
         <Skills />
         <Reviews />
         <ContactFooter />
-      </Wrapper>
+      </main>
     </>
   );
 }
 
-const Wrapper = styled.main``;
 export default App;
-
-// Sticky position
-// Slider Off and Display Both
-// Footer display
-// Locomotive scrool

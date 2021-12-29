@@ -7,7 +7,7 @@ import { links } from '../../utlis/data';
 
 const Navbar = () => {
   const { openSidebar, scrollLinks, navbar, activeLink } = useGlobalContext();
-  console.log(activeLink);
+
   return (
     <Wrapper ref={navbar}>
       <div className="nav-container">
@@ -51,7 +51,7 @@ const Wrapper = styled.nav`
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  z-index: 3;
+  z-index: 2;
   background: var(--secondary-color);
   top: 0;
   left: 0;
