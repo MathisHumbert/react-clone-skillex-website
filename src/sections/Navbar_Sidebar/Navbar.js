@@ -4,21 +4,17 @@ import { IoReorderTwo } from 'react-icons/io5';
 import logo from '../../images/617fa55008f302348b1f7703_logo.svg';
 import { useGlobalContext } from '../../context';
 import { links } from '../../utlis/data';
+import Links from './Links';
 
 const Navbar = () => {
   const { openSidebar } = useGlobalContext();
 
   return (
-    <Wrapper data-scroll-section>
+    <Wrapper data-scroll-section data-scroll>
       <div className="nav-container">
         <div className="left">
           <img src={logo} alt="main-logo" />
-          <ul>
-            {links.map((link) => {
-              const { id, text, url } = link;
-              return <li key={id}>{text}</li>;
-            })}
-          </ul>
+          <Links />
         </div>
         <div className="right">
           <button type="button" className="toggle-btn" onClick={openSidebar}>
@@ -40,6 +36,7 @@ const Wrapper = styled.nav`
   /* position: absolute;
   top: 0;
   left: 0; */
+
   width: 100%;
   padding: 20px 24px;
   margin: 0 auto;
@@ -48,7 +45,16 @@ const Wrapper = styled.nav`
   z-index: 2;
   background: var(--secondary-color);
 
+  &.is-reveal {
+    .nav-container {
+      transform: translateY(0);
+      transition: all 0.4s linear;
+      transition-delay: 0.4s;
+    }
+  }
+
   .nav-container {
+    transform: translateY(-200%);
     display: flex;
     align-items: center;
     justify-content: space-between;

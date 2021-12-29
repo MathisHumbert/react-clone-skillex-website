@@ -201,7 +201,7 @@ const Wrapper = styled.section`
     height: 715px;
     gap: 0;
     padding-bottom: 64px;
-    padding-top: 125px;
+    padding-top: 0;
 
     .left {
       padding-top: 56px;

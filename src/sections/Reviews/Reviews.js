@@ -42,7 +42,7 @@ const Reviews = () => {
   };
 
   return (
-    <Wrapper data-scroll-section data-scroll>
+    <Wrapper data-scroll-section data-scroll id="reviews">
       <h1 className="animation-block">What our customer say.</h1>
       <article className="animation-block slider" ref={slider}>
         {reviewsData.map((item) => {
