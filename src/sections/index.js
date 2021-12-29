@@ -4,7 +4,7 @@ import Categories from './Categories/Categories';
 import Skills from './Skills/Skills';
 import Reviews from './Reviews/Reviews';
 import ContactFooter from './Contact_Footer/ContactFooter';
-import Nav from './Navbar_Sidebar/Nav';
+import NavBar from './Navbar_Sidebar/NavBar';
 
 export {
   Sidebar,
@@ -13,5 +13,5 @@ export {
   Skills,
   Reviews,
   ContactFooter,
-  Nav,
+  NavBar,
 };

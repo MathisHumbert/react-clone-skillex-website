@@ -5,17 +5,11 @@ import logo from '../../images/617fa55008f302348b1f7703_logo.svg';
 import { useGlobalContext } from '../../context';
 import { links } from '../../utlis/data';
 
-const Navbar = () => {
+const NavBar = () => {
   const { openSidebar } = useGlobalContext();
 
   return (
-    <Wrapper
-      data-scroll-section
-      data-scroll
-      data-scroll-repeat
-      // data-scroll-sticky
-      // data-scroll-target="#main-container"
-    >
+    <Wrapper data-scroll-section data-scroll>
       <div className="nav-container">
         <div className="left">
           <img src={logo} alt="main-logo" />
@@ -49,10 +43,6 @@ const Navbar = () => {
 };
 
 const Wrapper = styled.nav`
-  /* position: absolute;
-  top: 0;
-  left: 0; */
-
   width: 100%;
   padding: 20px 24px;
   margin: 0 auto;
@@ -64,7 +54,7 @@ const Wrapper = styled.nav`
   &.is-reveal {
     .nav-container {
       transform: translateY(0);
-      transition: all 0.4s linear;
+      transition: all 0.8s var(--transition);
       transition-delay: 0.4s;
     }
   }
@@ -147,4 +137,4 @@ const Wrapper = styled.nav`
     }
   }
 `;
-export default Navbar;
+export default NavBar;

@@ -22,8 +22,8 @@ const Wrapper = styled.footer`
   &.is-reveal {
     .animation-block {
       opacity: 1;
-      transition: all 0.4s linear;
-      transition-delay: 0.2s;
+      transition: all 0.8s var(--transition);
+      transition-delay: 0.3s;
     }
   }
 `;

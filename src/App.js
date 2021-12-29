@@ -8,7 +8,7 @@ import {
   Skills,
   Reviews,
   ContactFooter,
-  Nav,
+  NavBar,
 } from './sections';
 
 function App() {
@@ -42,7 +42,7 @@ function App() {
     <>
       <main id="main-container" data-scroll-container>
         <Sidebar />
-        <Nav />
+        <NavBar />
         <FindPassion />
         <Categories />
         <Skills />

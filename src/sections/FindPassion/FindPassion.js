@@ -66,7 +66,7 @@ const Wrapper = styled.section`
     .animation-block {
       opacity: 1;
       transform: translateY(0);
-      transition: all 0.4s linear;
+      transition: all 0.8s var(--transition);
     }
   }
 
