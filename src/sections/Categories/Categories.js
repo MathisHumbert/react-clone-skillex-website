@@ -5,7 +5,12 @@ import Header from './Header';
 
 const Categories = () => {
   return (
-    <Wrapper className="section" data-scroll-section data-scroll>
+    <Wrapper
+      className="section"
+      data-scroll-section
+      data-scroll
+      id="categories"
+    >
       <Header />
       <Content />
     </Wrapper>

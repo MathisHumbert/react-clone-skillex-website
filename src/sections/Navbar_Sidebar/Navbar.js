@@ -4,7 +4,6 @@ import { IoReorderTwo } from 'react-icons/io5';
 import logo from '../../images/617fa55008f302348b1f7703_logo.svg';
 import { useGlobalContext } from '../../context';
 import { links } from '../../utlis/data';
-import Links from './Links';
 
 const Navbar = () => {
   const { openSidebar } = useGlobalContext();
@@ -14,7 +13,12 @@ const Navbar = () => {
       <div className="nav-container">
         <div className="left">
           <img src={logo} alt="main-logo" />
-          <Links />
+          <ul>
+            {links.map((link) => {
+              const { id, text, url } = link;
+              return <li key={id}>{text}</li>;
+            })}
+          </ul>
         </div>
         <div className="right">
           <button type="button" className="toggle-btn" onClick={openSidebar}>

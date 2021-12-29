@@ -4,7 +4,7 @@ import Content from './Content';
 
 const Skills = () => {
   return (
-    <Wrapper className="section" data-scroll-section>
+    <Wrapper className="section" data-scroll-section id="skills">
       <header data-scroll className="animation-block">
         <h1>Get the skills you need for a job that is in demand.</h1>
         <p>

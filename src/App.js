@@ -1,7 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import useLocalScroll from './utlis/useLocalScroll';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 
 import {
   Sidebar,
@@ -13,56 +11,51 @@ import {
   ContactFooter,
 } from './sections';
 
-// const enter = (elem) => {
-//   gsap.fromTo(
-//     elem,
-//     { y: 200, opacity: 0 },
-//     {
-//       duration: 3,
-//       y: 0,
-//       opacity: 1,
-//       stagger: 0.1,
-//       ease: 'power2',
-//       scrollTrigger: {
-//         trigger: elem,
-//         scroller: '#main-container',
-//         start: '-=400px',
-//       },
-//     }
-//   );
-//   ScrollTrigger.refresh();
-// };
-
 function App() {
-  const [loader, setLoader] = useState(false);
+  const [preloader, setPreloader] = useState(true);
+  const [timer, setTimer] = useState(3);
+  const id = useRef(null);
 
+  // locomotive scroll
+  useLocalScroll(!preloader);
+
+  const clear = () => {
+    window.clearInterval(id.current);
+    setPreloader(false);
+  };
+
+  // run when we mount the component
   useEffect(() => {
-    setTimeout(() => {
-      setLoader(true);
-    });
-  }, [loader]);
+    id.current = window.setInterval(() => {
+      setTimer((timer) => timer - 1);
+    }, 1000);
+  }, []);
 
-  useLocalScroll(loader);
-
-  // useEffect(() => {
-  //   enter('#test h1');
-  // });
-
-  // useEffect(() => {
-  //   enter('#title');
-  // });
+  // run when the timer is done
+  useEffect(() => {
+    if (timer === 0) {
+      clear();
+    }
+  }, [timer]);
 
   return (
     <>
-      <main id="main-container" data-scroll-container>
-        <Navbar />
-        <Sidebar />
-        <FindPassion />
-        <Categories />
-        <Skills />
-        <Reviews />
-        <ContactFooter />
-      </main>
+      {preloader ? (
+        <div className="loader-wrapper absolute">
+          <h1>Flirty flowers</h1>
+          <h2>Rio de Janeiro</h2>
+        </div>
+      ) : (
+        <main id="main-container" data-scroll-container>
+          <Navbar />
+          <Sidebar />
+          <FindPassion />
+          <Categories />
+          <Skills />
+          <Reviews />
+          <ContactFooter />
+        </main>
+      )}
     </>
   );
 }
