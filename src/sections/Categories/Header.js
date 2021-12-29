@@ -7,7 +7,7 @@ const Header = () => {
 
   return (
     <Wrapper>
-      <h1>Unlimited access to 100+ instructors.</h1>
+      <h1 id="title">Unlimited access to 100+ instructors.</h1>
       <ul>
         {categoriesHeading.map((item) => {
           return (
