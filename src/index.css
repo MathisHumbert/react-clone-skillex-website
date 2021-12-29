@@ -149,6 +149,39 @@ a {
   font-size: 26px;
 }
 
+.loader-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.absolute {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.loader-wrapper h1 {
+  font-size: 1.5vw;
+  text-transform: uppercase;
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-weight: 600;
+}
+
+.loader-wrapper h2 {
+  font-size: 1.5vw;
+  text-transform: uppercase;
+  font-family: 'Bodoni Moda', serif;
+  font-style: italic;
+  margin-top: 10px;
+}
+
 @media screen and (min-width: 768px) {
   .section {
     padding: 64px 24px;

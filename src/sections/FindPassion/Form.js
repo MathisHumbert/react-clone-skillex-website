@@ -76,7 +76,7 @@ const Wrapper = styled.form`
   @media (min-width: 998px) {
     font-size: 20px;
     left: 80px;
-    bottom: 56px;
+    bottom: 184px;
 
     input::placeholder {
       font-size: 20px;

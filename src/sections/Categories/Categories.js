@@ -22,7 +22,6 @@ const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 2rem;
 
   .animation-block {
     opacity: 0;

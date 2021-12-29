@@ -53,7 +53,7 @@ const Wrapper = styled.section`
   width: 100%;
   display: grid;
   gap: 30px;
-  padding-bottom: 182px;
+  padding-bottom: 152px;
   padding-top: 20px;
   position: relative;
 

@@ -13,7 +13,7 @@ import {
 
 function App() {
   const [preloader, setPreloader] = useState(true);
-  const [timer, setTimer] = useState(3);
+  const [timer, setTimer] = useState(1);
   const id = useRef(null);
 
   // locomotive scroll
