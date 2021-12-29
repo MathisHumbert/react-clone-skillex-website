@@ -6,7 +6,7 @@ const Form = () => {
 
   return (
     <Wrapper
-      className="contact"
+      className="contact animation-block"
       onSubmit={(e) => {
         e.preventDefault();
         setValue('');

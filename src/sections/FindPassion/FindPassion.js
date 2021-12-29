@@ -7,13 +7,18 @@ const FindPassion = () => {
   const [id, setId] = React.useState(1);
 
   return (
-    <Wrapper className="section" id="findPassion">
-      <article className="left" id="test">
+    <Wrapper
+      className="section"
+      id="findPassion"
+      data-scroll-section
+      data-scroll
+    >
+      <article className="left animation-block">
         <h1>Watch.</h1>
         <h1>Learn.</h1>
         <h1>Grow.</h1>
       </article>
-      <article className="right" onMouseLeave={() => setId(1)}>
+      <article className="right animation-block" onMouseLeave={() => setId(1)}>
         {findPassionData.map((item) => {
           const { mobileImg, title1, title2 } = item;
           return (
@@ -49,8 +54,21 @@ const Wrapper = styled.section`
   display: grid;
   gap: 30px;
   padding-bottom: 182px;
-  padding-top: 118px;
+  padding-top: 20px;
   position: relative;
+
+  .animation-block {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  &.is-reveal {
+    .animation-block {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.4s linear;
+    }
+  }
 
   h1 {
     font-size: 76px;

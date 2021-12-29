@@ -6,7 +6,7 @@ const Header = () => {
   const [id, setId] = React.useState(1);
 
   return (
-    <Wrapper>
+    <Wrapper className="animation-block">
       <h1 id="title">Unlimited access to 100+ instructors.</h1>
       <ul>
         {categoriesHeading.map((item) => {

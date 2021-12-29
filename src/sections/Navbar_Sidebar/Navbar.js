@@ -9,7 +9,7 @@ const Navbar = () => {
   const { openSidebar } = useGlobalContext();
 
   return (
-    <Wrapper>
+    <Wrapper data-scroll-section>
       <div className="nav-container">
         <div className="left">
           <img src={logo} alt="main-logo" />
@@ -37,7 +37,9 @@ const Navbar = () => {
 };
 
 const Wrapper = styled.nav`
-  position: absolute;
+  /* position: absolute;
+  top: 0;
+  left: 0; */
   width: 100%;
   padding: 20px 24px;
   margin: 0 auto;
@@ -45,9 +47,6 @@ const Wrapper = styled.nav`
   justify-content: center;
   z-index: 2;
   background: var(--secondary-color);
-  top: 0;
-  left: 0;
-  transition: transform 2s ease-in-out;
 
   .nav-container {
     display: flex;
@@ -75,10 +74,6 @@ const Wrapper = styled.nav`
 
   @media (min-width: 998px) {
     padding: 38px 80px;
-
-    &.fixed {
-      position: fixed;
-    }
 
     .left {
       display: flex;

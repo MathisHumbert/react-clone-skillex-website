@@ -18,6 +18,17 @@ export default function useLocalScroll(start) {
       smooth: true,
       multiplier: 1,
       class: 'is-reveal',
+
+      smartphone: {
+        smooth: true,
+        multiplier: 1,
+        class: 'is-reveal',
+      },
+      tablet: {
+        smooth: true,
+        multiplier: 1,
+        class: 'is-reveal',
+      },
     });
 
     localScroll.on('scroll', () => {

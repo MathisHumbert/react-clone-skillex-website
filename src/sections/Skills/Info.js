@@ -4,7 +4,7 @@ import { skillsData } from '../../utlis/data';
 
 const Info = () => {
   return (
-    <Wrapper>
+    <Wrapper data-scroll className="animation-block">
       {skillsData.map((item) => {
         const { id, logo, title, text } = item;
         return (

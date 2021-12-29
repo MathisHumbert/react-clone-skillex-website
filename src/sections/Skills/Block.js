@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Block = () => {
   return (
-    <Wrapper>
+    <Wrapper data-scroll className="special-animation">
       <div className="first">
         <h2>10</h2>
         <p>
@@ -22,12 +22,20 @@ const Block = () => {
 };
 
 const Wrapper = styled.div`
+  height: 0;
+  overflow: hidden;
+
+  &.is-reveal {
+    height: 124px;
+    transition: all 0.4s linear;
+    transition-delay: 0.2s;
+  }
+
   display: none;
   align-items: center;
   justify-content: center;
   background: var(--green-color);
   width: 544px;
-  height: 124px;
   gap: 52px;
   position: absolute;
   top: 0;

@@ -43,7 +43,7 @@ const Slider = () => {
 
   return (
     <Wrapper className="content">
-      <div className="container">
+      <div className="container special-animation" data-scroll>
         <div className="first" ref={first}>
           <h2>10</h2>
           <p>
@@ -62,9 +62,17 @@ const Slider = () => {
 };
 
 const Wrapper = styled.div`
+  .special-animation {
+    height: 0;
+  }
+  .is-reveal.special-animation {
+    height: 70px;
+    transition: all 0.4s linear;
+    transition-delay: 2s;
+  }
+
   .container {
     width: 162px;
-    height: 70px;
     background: var(--green-color);
     position: relative;
     overflow: hidden;

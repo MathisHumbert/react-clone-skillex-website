@@ -42,9 +42,9 @@ const Reviews = () => {
   };
 
   return (
-    <Wrapper>
-      <h1>What our customer say.</h1>
-      <article className="slider" ref={slider}>
+    <Wrapper data-scroll-section data-scroll>
+      <h1 className="animation-block">What our customer say.</h1>
+      <article className="animation-block slider" ref={slider}>
         {reviewsData.map((item) => {
           const { id, img, job, name, text } = item;
           return (
@@ -61,7 +61,7 @@ const Reviews = () => {
           );
         })}
       </article>
-      <div className="btn-container">
+      <div className="animation-block btn-container">
         <button type="button" onClick={(e) => toggleClick(e, 'dec')}>
           <ImArrowLeft2 />
         </button>
@@ -96,6 +96,20 @@ const Wrapper = styled.section`
   max-width: 1280px;
   margin: 0 auto;
   overflow: hidden;
+
+  .animation-block {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  &.is-reveal {
+    .animation-block {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.4s linear;
+      transition-delay: 0.2s;
+    }
+  }
 
   h1 {
     font-size: 40px;

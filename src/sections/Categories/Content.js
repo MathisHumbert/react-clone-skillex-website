@@ -6,7 +6,7 @@ import { useGlobalContext } from '../../context';
 
 const Content = () => {
   return (
-    <Wrapper>
+    <Wrapper className="animation-block">
       {categoriesImages.map((item) => {
         const { id, title, date, img } = item;
         return (

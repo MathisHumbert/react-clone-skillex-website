@@ -4,8 +4,8 @@ import Content from './Content';
 
 const Skills = () => {
   return (
-    <Wrapper className="section">
-      <header>
+    <Wrapper className="section" data-scroll-section>
+      <header data-scroll className="animation-block">
         <h1>Get the skills you need for a job that is in demand.</h1>
         <p>
           The modern labor market dictates its own terms. Today, to be a
@@ -18,10 +18,23 @@ const Skills = () => {
 };
 
 const Wrapper = styled.section`
+  .animation-block {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  .is-reveal.animation-block {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.4s linear;
+    transition-delay: 0.2s;
+  }
+
   position: relative;
 
   header {
     margin-bottom: 68px;
+
     h1 {
       font-size: 40px;
       margin-bottom: 40px;

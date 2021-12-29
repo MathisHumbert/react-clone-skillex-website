@@ -5,7 +5,7 @@ import logo from '../../images/619f7e9a1cc6db8ecfc33794_logo-copyright.svg';
 
 const Footer = () => {
   return (
-    <Wrapper>
+    <Wrapper className="animation-block">
       <ul>
         {icons.map((item, index) => {
           return (

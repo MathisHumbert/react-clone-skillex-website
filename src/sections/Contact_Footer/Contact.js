@@ -7,7 +7,7 @@ const Contact = () => {
   const [value, setValue] = React.useState('');
 
   return (
-    <Wrapper>
+    <Wrapper className="animation-block">
       <img src={logo} alt="main-logo" />
       <ul>
         {links.map((item) => {
