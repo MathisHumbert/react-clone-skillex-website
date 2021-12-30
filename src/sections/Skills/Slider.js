@@ -13,7 +13,7 @@ const Slider = () => {
 
     if (firstY > secondY) {
       second.current.style.opacity = 1;
-      first.current.style.transform = 'translateY(100%)';
+      first.current.style.tsransform = 'translateY(100%)';
       second.current.style.transform = 'translateY(0%)';
 
       setTimeout(() => {
@@ -39,7 +39,7 @@ const Slider = () => {
       slider();
     }, 3000);
     return () => clearInterval(sliderTimeout);
-  }, [trigger]);
+  }, [trigger, slider]);
 
   return (
     <Wrapper className="content">
