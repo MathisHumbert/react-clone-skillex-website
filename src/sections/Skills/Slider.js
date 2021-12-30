@@ -39,7 +39,8 @@ const Slider = () => {
       slider();
     }, 3000);
     return () => clearInterval(sliderTimeout);
-  }, [trigger, slider]);
+    // eslint-disable-next-line
+  }, [trigger]);
 
   return (
     <Wrapper className="content">
