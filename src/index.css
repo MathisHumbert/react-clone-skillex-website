@@ -83,6 +83,21 @@ a {
   font-size: inherit;
 }
 
+.block {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-left: -18px;
+  background: var(--primary-color);
+}
+.green-block {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin-left: 4px;
+  background: var(--green-color);
+}
+
 .connect-btn {
   font-size: 14px;
   padding: 10px 30px;

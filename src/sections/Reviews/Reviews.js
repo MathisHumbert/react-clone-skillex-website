@@ -43,7 +43,9 @@ const Reviews = () => {
 
   return (
     <Wrapper data-scroll-section data-scroll id="customer">
-      <h1 className="animation-block">What our customer say.</h1>
+      <h1 className="animation-block">
+        What our <br /> customer say <span className="green-block"></span>
+      </h1>
       <article className="animation-block slider" ref={slider}>
         {reviewsData.map((item) => {
           const { id, img, job, name, text } = item;
@@ -191,12 +193,21 @@ const Wrapper = styled.section`
     }
   }
 
+  .green-block {
+    margin-left: -10px;
+  }
+
   @media (min-width: 768px) {
     padding: 64px 0;
+
     .reviews-item {
       height: 290px;
       max-height: 290px;
       padding: 24px;
+    }
+
+    br {
+      display: none;
     }
   }
 `;

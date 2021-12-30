@@ -31,6 +31,7 @@ const useGlobalContext = () => {
 
 export { AppContext, AppProvider, useGlobalContext };
 
+// old code
 // const findPassion = useRef(null);
 // const categories = useRef(null);
 // const skills = useRef(null);

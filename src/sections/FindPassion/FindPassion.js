@@ -14,9 +14,15 @@ const FindPassion = () => {
       data-scroll
     >
       <article className="left animation-block">
-        <h1>Watch.</h1>
-        <h1>Learn.</h1>
-        <h1>Grow.</h1>
+        <h1>
+          Watch <span className="block"></span>
+        </h1>
+        <h1>
+          Learn <span className="block"></span>
+        </h1>
+        <h1>
+          Grow <span className="block"></span>
+        </h1>
       </article>
       <article className="right animation-block" onMouseLeave={() => setId(1)}>
         {findPassionData.map((item) => {

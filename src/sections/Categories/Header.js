@@ -7,7 +7,10 @@ const Header = () => {
 
   return (
     <Wrapper className="animation-block">
-      <h1 id="title">Unlimited access to 100+ instructors.</h1>
+      <h1 id="title">
+        Unlimited access to 100+ instructors
+        <span className="green-block"></span>
+      </h1>
       <ul>
         {categoriesHeading.map((item) => {
           return (

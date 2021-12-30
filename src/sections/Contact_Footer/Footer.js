@@ -21,6 +21,28 @@ const Footer = () => {
         <img src={logo} alt="company-logo" />
         <p>{new Date().getFullYear()} Hallo Lab. All rights reserved</p>
       </div>
+      <div className="clone">
+        <p>
+          This is a clonned website coded by{' '}
+          <a
+            href="https://twitter.com/Mathis1Humbert"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Mathis Humbert
+          </a>
+        </p>
+        <p>
+          The original{' '}
+          <a
+            href="https://skillex.webflow.io/#customer"
+            target="_blank"
+            rel="noreferrer"
+          >
+            skillex website
+          </a>
+        </p>
+      </div>
     </Wrapper>
   );
 };
@@ -77,11 +99,27 @@ const Wrapper = styled.article`
     }
   }
 
+  .clone {
+    width: 100%;
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    a {
+      text-decoration: underline;
+      color: var(--green-color);
+    }
+  }
+
   @media (min-width: 768px) {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    padding-bottom: 100px;
 
     .copy {
       padding-top: 0;
@@ -92,6 +130,11 @@ const Wrapper = styled.article`
     }
     .copy {
       justify-content: flex-start;
+    }
+
+    .clone {
+      position: absolute;
+      bottom: 24px;
     }
   }
 `;

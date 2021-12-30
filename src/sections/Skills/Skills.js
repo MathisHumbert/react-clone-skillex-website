@@ -6,7 +6,10 @@ const Skills = () => {
   return (
     <Wrapper className="section" data-scroll-section id="skills">
       <header data-scroll className="animation-block">
-        <h1>Get the skills you need for a job that is in demand.</h1>
+        <h1>
+          Get the skills you need for a job that is in demand
+          <span className="green-block"></span>
+        </h1>
         <p>
           The modern labor market dictates its own terms. Today, to be a
           competitive specialist requires more than professional skills
