@@ -62,7 +62,8 @@ const Wrapper = styled.section`
   display: grid;
   gap: 30px;
   padding-bottom: 152px;
-  padding-top: 20px;
+  padding-top: 100px;
+  /* padding-top: 20px; */
   position: relative;
 
   h1 {

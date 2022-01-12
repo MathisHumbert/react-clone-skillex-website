@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import {
   Sidebar,
   FindPassion,
@@ -7,6 +8,8 @@ import {
   ContactFooter,
   NavBar,
 } from './sections';
+
+import { transformNav, fixedNav } from './utlis/gsapActions';
 
 function App() {
   // const [preloader, setPreloader] = useState(true);
@@ -31,6 +34,11 @@ function App() {
   //     clear();
   //   }
   // }, [timer]);
+
+  useEffect(() => {
+    transformNav();
+    fixedNav();
+  });
 
   return (
     <>

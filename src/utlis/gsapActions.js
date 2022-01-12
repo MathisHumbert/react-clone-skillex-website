@@ -129,3 +129,39 @@ export const slideInTopHeader = (elem) => {
     }
   );
 };
+
+export const fixedNav = () => {
+  gsap.to('#navbar', {
+    scrollTrigger: {
+      onLeave: () => {
+        document.querySelector('#navbar').style.transform = 'translateY(-100%)';
+      },
+      onEnterBack: () => {
+        document.querySelector('#navbar').style.position = 'absolute';
+        document.querySelector('#navbar').style.transform = 'translateY(0)';
+      },
+      trigger: '#navbar',
+      start: '+=240px',
+      end: '+=240px',
+    },
+  });
+  ScrollTrigger.refresh();
+};
+
+export const transformNav = () => {
+  gsap.to('#navbar', {
+    scrollTrigger: {
+      onLeave: () => {
+        document.querySelector('#navbar').style.transform = 'translateY(0)';
+        document.querySelector('#navbar').style.position = 'fixed';
+      },
+      onEnterBack: () =>
+        (document.querySelector('#navbar').style.transform =
+          'translateY(-100%)'),
+      trigger: '#navbar',
+      start: '+=300px',
+      end: '+=300px',
+    },
+  });
+  ScrollTrigger.refresh();
+};
