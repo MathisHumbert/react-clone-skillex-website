@@ -7,7 +7,7 @@ import { useGlobalContext } from '../../context';
 import { links } from '../../utlis/data';
 
 const NavBar = () => {
-  const { openSidebar } = useGlobalContext();
+  const { openSidebar, handleScroll } = useGlobalContext();
 
   useEffect(() => {
     slideInTopNav('#navbar');
@@ -23,7 +23,9 @@ const NavBar = () => {
               const { id, text, url } = link;
               return (
                 <li key={id}>
-                  <a href={`#${url}`}>{text}</a>
+                  <a href={`#${url}`} onClick={handleScroll}>
+                    {text}
+                  </a>
                 </li>
               );
             })}
@@ -80,6 +82,11 @@ const Wrapper = styled.nav`
 
   @media (min-width: 998px) {
     padding: 38px 80px;
+
+    &.fixed {
+      padding: 18px 80px;
+      position: fixed;
+    }
 
     .left {
       display: flex;

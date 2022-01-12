@@ -1,8 +1,9 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
+  const navbar = document.querySelector('#navbar');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const closeSidebar = () => {
@@ -12,12 +13,71 @@ const AppProvider = ({ children }) => {
     setIsSidebarOpen(true);
   };
 
+  const handleScroll = (e) => {
+    e.preventDefault();
+    const id = e.target.getAttribute('href');
+    const navbar = document.querySelector('#navbar');
+    const element = document.querySelector(id);
+    const navHeight = navbar.getBoundingClientRect().height;
+
+    if (element.id === 'findPassion') {
+      window.scrollTo({
+        left: 0,
+        top: 0,
+      });
+      navbar.classList.remove('fixed');
+      return;
+    }
+
+    let position = element.offsetTop;
+
+    if (navbar.classList.contains('big')) {
+      position -= navHeight;
+      navbar.classList.add('fixed');
+    }
+
+    window.scrollTo({
+      left: 0,
+      top: position,
+    });
+  };
+
+  const handleWindowWidth = () => {
+    if (window.innerWidth > 998) {
+      document.querySelector('#navbar').classList.add('big');
+    } else {
+      document.querySelector('#navbar').classList.remove('big');
+    }
+  };
+
+  const handleWindowHeight = () => {
+    const navbar = document.querySelector('#navbar');
+    if (window.scrollY > 300 && navbar.classList.contains('big')) {
+      navbar.classList.add('fixed');
+    } else {
+      navbar.classList.remove('fixed');
+    }
+  };
+  useEffect(() => {
+    handleWindowWidth();
+    window.addEventListener('resize', handleWindowWidth);
+    return () => window.removeEventListener('resize', handleWindowWidth);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleWindowHeight);
+    return () => window.removeEventListener('scroll', handleWindowHeight);
+  });
+
+  useEffect(() => {});
+
   return (
     <AppContext.Provider
       value={{
         isSidebarOpen,
         closeSidebar,
         openSidebar,
+        handleScroll,
       }}
     >
       {children}
@@ -30,65 +90,3 @@ const useGlobalContext = () => {
 };
 
 export { AppContext, AppProvider, useGlobalContext };
-
-// old code
-// const findPassion = useRef(null);
-// const categories = useRef(null);
-// const skills = useRef(null);
-// const customer = useRef(null);
-// const navbar = React.useRef(null);
-// const links = { categories, skills, customer, findPassion };
-
-// const scrollLinks = (url) => {
-//   const link = links[url].current;
-//   let position = link.offsetTop;
-
-//   if (url !== 'findPassion' && window.innerWidth >= 998) {
-//     position -= 81;
-//   }
-
-//   window.scrollTo(0, position);
-// };
-
-// const handleScroll = () => {
-//   const nav = navbar.current;
-//   const windowHeight = window.scrollY;
-//   const windowHeightFixed = windowHeight + 81;
-//   if (window.innerWidth <= 998) {
-//     nav.style.position = 'absolute';
-//     nav.style.paddingTop = '20px';
-//     nav.style.paddingBottom = '20px';
-//     return;
-//   }
-
-//   if (windowHeightFixed < categories.current.offsetTop) {
-//     setActiveLink('findPassion');
-//   } else if (
-//     windowHeightFixed >= categories.current.offsetTop &&
-//     windowHeightFixed < skills.current.offsetTop
-//   ) {
-//     setActiveLink('categories');
-//   } else if (
-//     windowHeightFixed >= skills.current.offsetTop &&
-//     windowHeightFixed < customer.current.offsetTop
-//   ) {
-//     setActiveLink('skills');
-//   } else {
-//     setActiveLink('customer');
-//   }
-
-//   if (windowHeight > 130) {
-//     nav.style.position = 'fixed';
-//     nav.style.paddingTop = '18px';
-//     nav.style.paddingBottom = '18px';
-//   } else {
-//     nav.style.position = 'absolute';
-//     nav.style.paddingTop = '38px';
-//     nav.style.paddingBottom = '38px';
-//   }
-// };
-
-// useEffect(() => {
-//   window.addEventListener('scroll', handleScroll);
-//   return () => window.removeEventListener('scroll', handleScroll);
-// }, []);

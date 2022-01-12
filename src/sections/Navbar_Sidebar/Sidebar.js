@@ -5,7 +5,7 @@ import { useGlobalContext } from '../../context';
 import { IoClose } from 'react-icons/io5';
 
 const Sidebar = () => {
-  const { isSidebarOpen, closeSidebar } = useGlobalContext();
+  const { isSidebarOpen, closeSidebar, handleScroll } = useGlobalContext();
   return (
     <Wrapper className={isSidebarOpen ? 'active' : null}>
       <button type='button' className='toggle-btn' onClick={closeSidebar}>
@@ -16,7 +16,13 @@ const Sidebar = () => {
           const { text, id, url } = item;
           return (
             <li key={id}>
-              <a href={`#${url}`} onClick={closeSidebar}>
+              <a
+                href={`#${url}`}
+                onClick={(e) => {
+                  closeSidebar();
+                  handleScroll(e);
+                }}
+              >
                 {text}
               </a>
             </li>

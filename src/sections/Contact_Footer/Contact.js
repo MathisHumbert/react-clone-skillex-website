@@ -2,8 +2,10 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import logo from '../../images/617fa55008f302348b1f7703_logo.svg';
 import { links } from '../../utlis/data';
+import { useGlobalContext } from '../../context';
 
 const Contact = () => {
+  const { handleScroll } = useGlobalContext();
   const [value, setValue] = useState('');
 
   return (
@@ -14,7 +16,9 @@ const Contact = () => {
           const { id, url, text } = item;
           return (
             <li key={id}>
-              <a href={`#${url}`}>{text}</a>
+              <a href={`#${url}`} onClick={handleScroll}>
+                {text}
+              </a>
             </li>
           );
         })}
