@@ -6,8 +6,8 @@ import Slider from './Slider';
 
 const Video = () => {
   return (
-    <Wrapper>
-      <img src={img} alt="main-img" data-scroll className="animation-block" />
+    <Wrapper id='skills-video'>
+      <img src={img} alt='main-img' />
       <Slider />
       <Block />
     </Wrapper>

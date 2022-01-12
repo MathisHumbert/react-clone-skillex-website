@@ -4,19 +4,19 @@ import { skillsData } from '../../utlis/data';
 
 const Info = () => {
   return (
-    <Wrapper data-scroll className="animation-block">
+    <Wrapper id='skills-info'>
       {skillsData.map((item) => {
         const { id, logo, title, text } = item;
         return (
           <li key={id}>
-            <div className="logo-container">
-              <img src={logo} alt="" />
+            <div className='logo-container'>
+              <img src={logo} alt='' />
             </div>
-            <div className="info-container">
+            <div className='info-container'>
               <h3>{title}</h3>
               <p>{text}</p>
             </div>
-            {id < skillsData.length && <div className="list-line"></div>}
+            {id < skillsData.length && <div className='list-line'></div>}
           </li>
         );
       })}

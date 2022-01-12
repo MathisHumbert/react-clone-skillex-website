@@ -1,7 +1,8 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { reviewsData } from '../../utlis/data';
 import { ImArrowLeft2, ImArrowRight2 } from 'react-icons/im';
+import { slideInTop } from '../../utlis/gsapActions';
 
 const Reviews = () => {
   const slider = useRef(null);
@@ -41,20 +42,24 @@ const Reviews = () => {
     }, 600);
   };
 
+  useEffect(() => {
+    slideInTop('#customer');
+  }, []);
+
   return (
-    <Wrapper data-scroll-section data-scroll id="customer">
-      <h1 className="animation-block">
-        What our <br /> customer say <span className="green-block"></span>
+    <Wrapper id='customer'>
+      <h1 id='customer-header'>
+        What our <br /> customer say <span className='green-block'></span>
       </h1>
-      <article className="animation-block slider" ref={slider}>
+      <article className='slider' ref={slider}>
         {reviewsData.map((item) => {
           const { id, img, job, name, text } = item;
           return (
-            <div key={id} className="reviews-item" ref={review}>
+            <div key={id} className='reviews-item' ref={review}>
               <p>{text}</p>
               <footer>
                 <img src={img} alt={name} />
-                <div className="reviews-info">
+                <div className='reviews-info'>
                   <h4>{name}</h4>
                   <h5>{job}</h5>
                 </div>
@@ -63,11 +68,11 @@ const Reviews = () => {
           );
         })}
       </article>
-      <div className="animation-block btn-container">
-        <button type="button" onClick={(e) => toggleClick(e, 'dec')}>
+      <div className='btn-container'>
+        <button type='button' onClick={(e) => toggleClick(e, 'dec')}>
           <ImArrowLeft2 />
         </button>
-        <button type="button" onClick={(e) => toggleClick(e, 'inc')}>
+        <button type='button' onClick={(e) => toggleClick(e, 'inc')}>
           <ImArrowRight2 />
         </button>
       </div>
@@ -99,20 +104,6 @@ const Wrapper = styled.section`
   margin: 0 auto;
   overflow: hidden;
 
-  .animation-block {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-
-  &.is-reveal {
-    .animation-block {
-      opacity: 1;
-      transform: translateY(0);
-      transition: all 0.8s var(--transition);
-      transition-delay: 0.3s;
-    }
-  }
-
   h1 {
     font-size: 40px;
     text-align: center;
@@ -123,7 +114,7 @@ const Wrapper = styled.section`
   .slider {
     display: flex;
     transform: translateX(0);
-    transition: transform 0.2s linear;
+    transition: transform 0.6s ease-in-out;
   }
 
   .reviews-item {

@@ -1,33 +1,32 @@
-import React from 'react';
 import styled from 'styled-components';
 import { icons } from '../../utlis/data';
 import logo from '../../images/619f7e9a1cc6db8ecfc33794_logo-copyright.svg';
 
 const Footer = () => {
   return (
-    <Wrapper className="animation-block">
+    <Wrapper id='footer'>
       <ul>
         {icons.map((item, index) => {
           return (
             <li key={index}>
-              <a href={item.url} target="_blank" rel="noreferrer">
+              <a href={item.url} target='_blank' rel='noreferrer'>
                 {item.icon}
               </a>
             </li>
           );
         })}
       </ul>
-      <div className="copy">
-        <img src={logo} alt="company-logo" />
+      <div className='copy'>
+        <img src={logo} alt='company-logo' />
         <p>{new Date().getFullYear()} Hallo Lab. All rights reserved</p>
       </div>
-      <div className="clone">
+      <div className='clone'>
         <p>
           This is a clonned website coded by{' '}
           <a
-            href="https://twitter.com/Mathis1Humbert"
-            target="_blank"
-            rel="noreferrer"
+            href='https://twitter.com/Mathis1Humbert'
+            target='_blank'
+            rel='noreferrer'
           >
             Mathis Humbert
           </a>
@@ -35,9 +34,9 @@ const Footer = () => {
         <p>
           The original{' '}
           <a
-            href="https://skillex.webflow.io/#customer"
-            target="_blank"
-            rel="noreferrer"
+            href='https://skillex.webflow.io/#customer'
+            target='_blank'
+            rel='noreferrer'
           >
             skillex website
           </a>

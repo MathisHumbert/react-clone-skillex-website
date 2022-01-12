@@ -13,7 +13,7 @@ const Slider = () => {
 
     if (firstY > secondY) {
       second.current.style.opacity = 1;
-      first.current.style.tsransform = 'translateY(100%)';
+      first.current.style.transform = 'translateY(100%)';
       second.current.style.transform = 'translateY(0%)';
 
       setTimeout(() => {
@@ -43,15 +43,15 @@ const Slider = () => {
   }, [trigger]);
 
   return (
-    <Wrapper className="content">
-      <div className="container special-animation" data-scroll>
-        <div className="first" ref={first}>
+    <Wrapper className='content'>
+      <div className='container'>
+        <div className='first' ref={first}>
           <h2>10</h2>
           <p>
             years <br /> experiences
           </p>
         </div>
-        <div className="second" ref={second}>
+        <div className='second' ref={second}>
           <h2>250</h2>
           <p>
             types of <br /> course
@@ -63,16 +63,8 @@ const Slider = () => {
 };
 
 const Wrapper = styled.div`
-  .special-animation {
-    height: 0;
-  }
-  .is-reveal.special-animation {
-    height: 70px;
-    transition: all 0.4s linear;
-    transition-delay: 2s;
-  }
-
   .container {
+    height: 70px;
     width: 162px;
     background: var(--green-color);
     position: relative;

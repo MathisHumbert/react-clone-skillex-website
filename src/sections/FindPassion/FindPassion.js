@@ -1,30 +1,32 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
+import { slideInTopHeader, slideInTopPassion } from '../../utlis/gsapActions';
 import styled from 'styled-components';
 import Form from './Form';
 import { findPassionData } from '../../utlis/data';
 
 const FindPassion = () => {
-  const [id, setId] = React.useState(1);
+  useEffect(() => {
+    slideInTopHeader('#header h1');
+    slideInTopPassion('#passionImg');
+    slideInTopPassion('#form');
+  }, []);
+
+  const [id, setId] = useState(1);
 
   return (
-    <Wrapper
-      className="section"
-      id="findPassion"
-      data-scroll-section
-      data-scroll
-    >
-      <article className="left animation-block">
+    <Wrapper className='section' id='findPassion'>
+      <article className='left' id='header'>
         <h1>
-          Watch <span className="block"></span>
+          Watch <span className='block'></span>
         </h1>
         <h1>
-          Learn <span className="block"></span>
+          Learn <span className='block'></span>
         </h1>
         <h1>
-          Grow <span className="block"></span>
+          Grow <span className='block'></span>
         </h1>
       </article>
-      <article className="right animation-block" onMouseLeave={() => setId(1)}>
+      <article className='right' id='passionImg' onMouseLeave={() => setId(1)}>
         {findPassionData.map((item) => {
           const { mobileImg, title1, title2 } = item;
           return (
@@ -35,13 +37,13 @@ const FindPassion = () => {
               }
               onMouseEnter={() => setId(item.id)}
             >
-              <img src={mobileImg} alt="passion-img" />
+              <img src={mobileImg} alt='passion-img' />
               <footer>
-                <div className="left-header">
+                <div className='left-header'>
                   <h3>{title1}</h3>
                   <h3>{title2}</h3>
                 </div>
-                <div className="right-header">
+                <div className='right-header'>
                   <h2>100</h2>
                   <h4>topics</h4>
                 </div>
@@ -62,19 +64,6 @@ const Wrapper = styled.section`
   padding-bottom: 152px;
   padding-top: 20px;
   position: relative;
-
-  .animation-block {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-
-  &.is-reveal {
-    .animation-block {
-      opacity: 1;
-      transform: translateY(0);
-      transition: all 0.8s var(--transition);
-    }
-  }
 
   h1 {
     font-size: 76px;

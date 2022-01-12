@@ -5,7 +5,7 @@ import Info from './Info';
 
 const Content = () => {
   return (
-    <Wrapper>
+    <Wrapper id='skills-content'>
       <Video />
       <Info />
     </Wrapper>

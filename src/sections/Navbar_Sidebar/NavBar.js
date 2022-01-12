@@ -1,6 +1,7 @@
-import React from 'react';
+import { useEffect } from 'react';
 import styled from 'styled-components';
 import { IoReorderTwo } from 'react-icons/io5';
+import { slideInTopNav } from '../../utlis/gsapActions';
 import logo from '../../images/617fa55008f302348b1f7703_logo.svg';
 import { useGlobalContext } from '../../context';
 import { links } from '../../utlis/data';
@@ -8,33 +9,35 @@ import { links } from '../../utlis/data';
 const NavBar = () => {
   const { openSidebar } = useGlobalContext();
 
+  useEffect(() => {
+    slideInTopNav('#navbar');
+  }, []);
+
   return (
-    <Wrapper data-scroll-section data-scroll>
-      <div className="nav-container">
-        <div className="left">
-          <img src={logo} alt="main-logo" />
+    <Wrapper id='navbar'>
+      <div className='nav-container'>
+        <div className='left'>
+          <img src={logo} alt='main-logo' />
           <ul>
             {links.map((link) => {
               const { id, text, url } = link;
               return (
                 <li key={id}>
-                  <a href={`#${url}`} data-scroll-to>
-                    {text}
-                  </a>
+                  <a href={`#${url}`}>{text}</a>
                 </li>
               );
             })}
           </ul>
         </div>
-        <div className="right">
-          <button type="button" className="toggle-btn" onClick={openSidebar}>
-            <IoReorderTwo className="toggle-icon" />
+        <div className='right'>
+          <button type='button' className='toggle-btn' onClick={openSidebar}>
+            <IoReorderTwo className='toggle-icon' />
           </button>
-          <div className="connect-container">
+          <div className='connect-container'>
             <li>
               <p>Login</p>
             </li>
-            <button className="connect-btn">Free Trial</button>
+            <button className='connect-btn'>Free Trial</button>
           </div>
         </div>
       </div>
@@ -51,21 +54,12 @@ const Wrapper = styled.nav`
   z-index: 2;
   background: var(--secondary-color);
 
-  &.is-reveal {
-    .nav-container {
-      transform: translateY(0);
-      transition: all 0.8s var(--transition);
-      transition-delay: 0.4s;
-    }
-  }
-
   .nav-container {
-    transform: translateY(-200%);
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    max-width: 1440px;
+    max-width: 1280px;
   }
 
   img {

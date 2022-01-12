@@ -5,13 +5,13 @@ import { ImArrowUpRight2 } from 'react-icons/im';
 
 const Content = () => {
   return (
-    <Wrapper className="animation-block">
+    <Wrapper id='categories-content'>
       {categoriesImages.map((item) => {
         const { id, title, date, img } = item;
         return (
           <article key={id}>
-            <div className="img-container">
-              <img src={img} alt="title" />
+            <div className='img-container'>
+              <img src={img} alt='title' />
               <span>
                 <ImArrowUpRight2 />
               </span>

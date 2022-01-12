@@ -1,43 +1,41 @@
-import React from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import logo from '../../images/617fa55008f302348b1f7703_logo.svg';
 import { links } from '../../utlis/data';
 
 const Contact = () => {
-  const [value, setValue] = React.useState('');
+  const [value, setValue] = useState('');
 
   return (
-    <Wrapper className="animation-block">
-      <img src={logo} alt="main-logo" />
+    <Wrapper id='contact'>
+      <img src={logo} alt='main-logo' />
       <ul>
         {links.map((item) => {
           const { id, url, text } = item;
           return (
             <li key={id}>
-              <a href={`#${url}`} data-scroll-to>
-                {text}
-              </a>
+              <a href={`#${url}`}>{text}</a>
             </li>
           );
         })}
       </ul>
-      <div className="form-container">
+      <div className='form-container'>
         <h3>Join our community</h3>
         <form
-          className="contact"
+          className='contact'
           onSubmit={(e) => {
             e.preventDefault();
             setValue('');
           }}
         >
           <input
-            type="text"
-            placeholder="Enter your email"
-            className="contact-input"
+            type='text'
+            placeholder='Enter your email'
+            className='contact-input'
             value={value}
             onChange={(e) => setValue(e.target.value)}
           />
-          <button type="submit">Go</button>
+          <button type='submit'>Go</button>
         </form>
       </div>
     </Wrapper>

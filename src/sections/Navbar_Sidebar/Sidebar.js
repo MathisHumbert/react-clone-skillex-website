@@ -8,26 +8,26 @@ const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useGlobalContext();
   return (
     <Wrapper className={isSidebarOpen ? 'active' : null}>
-      <button type="button" className="toggle-btn" onClick={closeSidebar}>
-        <IoClose className="toggle-icon" />
+      <button type='button' className='toggle-btn' onClick={closeSidebar}>
+        <IoClose className='toggle-icon' />
       </button>
-      <ul className="top">
+      <ul className='top'>
         {links.map((item) => {
           const { text, id, url } = item;
           return (
             <li key={id}>
-              <a href={`#${url}`} data-scroll-to onClick={closeSidebar}>
+              <a href={`#${url}`} onClick={closeSidebar}>
                 {text}
               </a>
             </li>
           );
         })}
       </ul>
-      <footer className="bottom">
-        <button className="connect-btn white" onClick={closeSidebar}>
+      <footer className='bottom'>
+        <button className='connect-btn white' onClick={closeSidebar}>
           Login
         </button>
-        <button className="connect-btn" onClick={closeSidebar}>
+        <button className='connect-btn' onClick={closeSidebar}>
           Free Trial
         </button>
       </footer>

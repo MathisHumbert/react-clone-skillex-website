@@ -29,7 +29,7 @@ html {
   box-sizing: border-box;
 }
 
-#main-container {
+#root {
   overflow-x: hidden;
   position: relative;
 }

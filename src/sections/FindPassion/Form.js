@@ -6,20 +6,21 @@ const Form = () => {
 
   return (
     <Wrapper
-      className="contact animation-block"
+      className='contact'
+      id='form'
       onSubmit={(e) => {
         e.preventDefault();
         setValue('');
       }}
     >
       <input
-        type="text"
-        placeholder="Find your passion"
-        className="contact-input"
+        type='text'
+        placeholder='Find your passion'
+        className='contact-input'
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
-      <button type="submit">Go</button>
+      <button type='submit'>Go</button>
     </Wrapper>
   );
 };

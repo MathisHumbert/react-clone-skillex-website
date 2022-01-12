@@ -6,10 +6,10 @@ const Header = () => {
   const [id, setId] = React.useState(1);
 
   return (
-    <Wrapper className="animation-block">
-      <h1 id="title">
+    <Wrapper>
+      <h1 id='title'>
         Unlimited access to 100+ instructors
-        <span className="green-block"></span>
+        <span className='green-block'></span>
       </h1>
       <ul>
         {categoriesHeading.map((item) => {

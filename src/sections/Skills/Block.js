@@ -3,15 +3,15 @@ import styled from 'styled-components';
 
 const Block = () => {
   return (
-    <Wrapper data-scroll className="special-animation">
-      <div className="first">
+    <Wrapper>
+      <div className='first'>
         <h2>10</h2>
         <p>
           years <br /> experiences
         </p>
       </div>
-      <div className="bar"></div>
-      <div className="second">
+      <div className='bar'></div>
+      <div className='second'>
         <h2>250</h2>
         <p>
           types of <br /> course
@@ -22,15 +22,7 @@ const Block = () => {
 };
 
 const Wrapper = styled.div`
-  height: 0;
-  overflow: hidden;
-
-  &.is-reveal {
-    height: 124px;
-    transition: all 0.4s linear;
-    transition-delay: 0.2s;
-  }
-
+  height: 124px;
   display: none;
   align-items: center;
   justify-content: center;

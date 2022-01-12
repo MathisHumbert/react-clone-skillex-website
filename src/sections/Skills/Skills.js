@@ -1,14 +1,25 @@
-import React from 'react';
+import { useEffect } from 'react';
 import styled from 'styled-components';
 import Content from './Content';
+import {
+  slideInTop,
+  slideInTopDelay,
+  slideInTopHeader,
+} from '../../utlis/gsapActions';
 
 const Skills = () => {
+  useEffect(() => {
+    slideInTop('#skills');
+    slideInTopDelay('#skills-video', '#skills');
+    slideInTopHeader('#skills-info li');
+  }, []);
+
   return (
-    <Wrapper className="section" data-scroll-section id="skills">
-      <header data-scroll className="animation-block">
+    <Wrapper className='section' id='skills'>
+      <header>
         <h1>
           Get the skills you need for a job that is in demand
-          <span className="green-block"></span>
+          <span className='green-block'></span>
         </h1>
         <p>
           The modern labor market dictates its own terms. Today, to be a
@@ -21,18 +32,6 @@ const Skills = () => {
 };
 
 const Wrapper = styled.section`
-  .animation-block {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-
-  .is-reveal.animation-block {
-    opacity: 1;
-    transform: translateY(0);
-    transition: all 0.8s var(--transition);
-    transition-delay: 0.3s;
-  }
-
   position: relative;
 
   header {

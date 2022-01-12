@@ -1,16 +1,17 @@
-import React from 'react';
+import { useEffect } from 'react';
 import styled from 'styled-components';
+import { slideInTop, slideInTopDelay } from '../../utlis/gsapActions';
 import Content from './Content';
 import Header from './Header';
 
 const Categories = () => {
+  useEffect(() => {
+    slideInTop('#categories');
+    slideInTopDelay('#categories-content', '#categories');
+  }, []);
+
   return (
-    <Wrapper
-      className="section"
-      data-scroll-section
-      data-scroll
-      id="categories"
-    >
+    <Wrapper className='section' id='categories'>
       <Header />
       <Content />
     </Wrapper>
@@ -22,19 +23,5 @@ const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  .animation-block {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-
-  &.is-reveal {
-    .animation-block {
-      opacity: 1;
-      transform: translateY(0);
-      transition: all 0.8s var(--transition);
-      transition-delay: 0.3s;
-    }
-  }
 `;
 export default Categories;
