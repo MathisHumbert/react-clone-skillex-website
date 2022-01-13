@@ -24,12 +24,11 @@ const AppProvider = ({ children }) => {
         left: 0,
         top: 0,
       });
-      navbar.classList.remove('fixed');
       return;
     }
 
     let position = element.offsetTop;
-
+    console.log(window.innerWidth);
     if (navbar.classList.contains('big')) {
       position -= navHeight;
       navbar.classList.add('fixed');
@@ -41,32 +40,30 @@ const AppProvider = ({ children }) => {
     });
   };
 
-  // const handleWindowWidth = () => {
-  //   if (window.innerWidth > 998) {
-  //     document.querySelector('#navbar').classList.add('big');
-  //   } else {
-  //     document.querySelector('#navbar').classList.remove('big');
-  //   }
-  // };
+  const handleWindowHeight = () => {
+    document.querySelectorAll('.scroll-link').forEach((link) => {
+      link.classList.remove('active');
+    });
 
-  // const handleWindowHeight = () => {
-  //   const navbar = document.querySelector('#navbar');
-  //   if (window.scrollY > 300 && navbar.classList.contains('big')) {
-  //     navbar.classList.add('fixed');
-  //   } else {
-  //     navbar.classList.remove('fixed');
-  //   }
-  // };
-  // useEffect(() => {
-  //   handleWindowWidth();
-  //   window.addEventListener('resize', handleWindowWidth);
-  //   return () => window.removeEventListener('resize', handleWindowWidth);
-  // }, []);
+    if (window.scrollY > 596 && window.scrollY <= 1437) {
+      document.getElementById('categories-link').classList.add('active');
+    } else if (window.scrollY > 1437 && window.scrollY <= 2235) {
+      document.getElementById('skills-link').classList.add('active');
+    } else if (window.scrollY > 2235) {
+      document.getElementById('customer-link').classList.add('active');
+    } else {
+      document.getElementById('findPassion-link').classList.add('active');
+    }
+  };
 
-  // useEffect(() => {
-  //   window.addEventListener('scroll', handleWindowHeight);
-  //   return () => window.removeEventListener('scroll', handleWindowHeight);
-  // });
+  useEffect(() => {
+    console.log(document.getElementById('categories').offsetTop);
+    console.log(document.getElementById('skills').offsetTop);
+    console.log(document.getElementById('customer').offsetTop);
+    window.addEventListener('scroll', handleWindowHeight);
+
+    return () => window.removeEventListener('scroll', handleWindowHeight);
+  });
 
   useEffect(() => {});
 

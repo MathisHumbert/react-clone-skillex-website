@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import styled from 'styled-components';
 import logo from '../../images/617fa55008f302348b1f7703_logo.svg';
-import { slideInTopNav } from '../../utlis/gsapActions';
+import { slideInTopNav, transformNav, fixedNav } from '../../utlis/gsapActions';
 import { useGlobalContext } from '../../context';
 import { links } from '../../utlis/data';
 
@@ -10,6 +10,8 @@ const NavBar = () => {
 
   useEffect(() => {
     slideInTopNav('#big-navbar');
+    transformNav();
+    fixedNav();
   }, []);
 
   return (
@@ -21,7 +23,7 @@ const NavBar = () => {
             {links.map((link) => {
               const { id, text, url } = link;
               return (
-                <li key={id}>
+                <li key={id} id={`${url}-link`} className='scroll-link'>
                   <a href={`#${url}`} onClick={handleScroll}>
                     {text}
                   </a>
