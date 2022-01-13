@@ -28,7 +28,6 @@ const AppProvider = ({ children }) => {
     }
 
     let position = element.offsetTop;
-    console.log(window.innerWidth);
     if (navbar.classList.contains('big')) {
       position -= navHeight;
       navbar.classList.add('fixed');
@@ -45,11 +44,11 @@ const AppProvider = ({ children }) => {
       link.classList.remove('active');
     });
 
-    if (window.scrollY > 596 && window.scrollY <= 1437) {
+    if (window.scrollY > 300 && window.scrollY <= 1000) {
       document.getElementById('categories-link').classList.add('active');
-    } else if (window.scrollY > 1437 && window.scrollY <= 2235) {
+    } else if (window.scrollY > 1000 && window.scrollY <= 1900) {
       document.getElementById('skills-link').classList.add('active');
-    } else if (window.scrollY > 2235) {
+    } else if (window.scrollY > 1900) {
       document.getElementById('customer-link').classList.add('active');
     } else {
       document.getElementById('findPassion-link').classList.add('active');
@@ -57,9 +56,6 @@ const AppProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    console.log(document.getElementById('categories').offsetTop);
-    console.log(document.getElementById('skills').offsetTop);
-    console.log(document.getElementById('customer').offsetTop);
     window.addEventListener('scroll', handleWindowHeight);
 
     return () => window.removeEventListener('scroll', handleWindowHeight);

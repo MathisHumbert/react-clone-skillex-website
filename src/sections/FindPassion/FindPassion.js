@@ -183,12 +183,6 @@ const Wrapper = styled.section`
     text-transform: uppercase;
   }
 
-  @media (min-width: 768px) {
-    .right {
-      max-height: 500px;
-    }
-  }
-
   @media (min-width: 998px) {
     width: 100%;
     display: grid;

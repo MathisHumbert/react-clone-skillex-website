@@ -58,7 +58,10 @@ const Wrapper = styled.form`
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 998px) {
+    font-size: 20px;
+    left: 80px;
+    bottom: 64px;
     height: 120px;
     width: 450px;
 
@@ -72,12 +75,6 @@ const Wrapper = styled.form`
       font-size: 34px;
       box-shadow: inset 0 120px 0 0 var(--green-color);
     }
-  }
-
-  @media (min-width: 998px) {
-    font-size: 20px;
-    left: 80px;
-    bottom: 184px;
 
     input::placeholder {
       font-size: 20px;
