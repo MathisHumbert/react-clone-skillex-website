@@ -1,10 +1,6 @@
 import { useEffect } from 'react';
 import styled from 'styled-components';
-import {
-  slideInTopTrig,
-  slideInTopDelay,
-  slideInTopTop,
-} from '../../utlis/gsapActions';
+import { slideInTopTop } from '../../utlis/gsapActions';
 import Contact from './Contact';
 import Footer from './Footer';
 
