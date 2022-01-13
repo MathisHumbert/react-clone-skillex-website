@@ -8,9 +8,9 @@ import { slideInTopNav } from '../../utlis/gsapActions';
 const SmallNav = () => {
   const { openSidebar } = useGlobalContext();
 
-  // useEffect(() => {
-  //   slideInTopNav('#small-nav');
-  // }, []);
+  useEffect(() => {
+    slideInTopNav('#small-nav');
+  }, []);
 
   return (
     <Wrapper id='small-nav'>

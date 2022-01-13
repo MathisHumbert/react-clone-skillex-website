@@ -50,8 +50,7 @@ const Wrapper = styled.nav`
   z-index: 2;
   background: var(--secondary-color);
   position: absolute;
-  top: 0;
-  transition: transform 0.4s ease-in-out;
+  transition: transform 0.6s ease-in-out;
 
   .nav-container {
     display: flex;

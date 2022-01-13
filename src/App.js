@@ -40,10 +40,10 @@ function App() {
   // create small Nav and big Nav
   // fix form
 
-  // useEffect(() => {
-  //   transformNav();
-  //   fixedNav();
-  // });
+  useEffect(() => {
+    transformNav();
+    fixedNav();
+  });
 
   return (
     <>

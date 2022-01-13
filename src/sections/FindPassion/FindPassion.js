@@ -63,7 +63,6 @@ const Wrapper = styled.section`
   gap: 30px;
   padding-bottom: 152px;
   padding-top: 100px;
-  /* padding-top: 20px; */
   position: relative;
 
   h1 {
@@ -197,7 +196,7 @@ const Wrapper = styled.section`
     height: 715px;
     gap: 0;
     padding-bottom: 64px;
-    padding-top: 0;
+    padding-top: 120px;
 
     .left {
       padding-top: 56px;

@@ -92,9 +92,11 @@ export const slideInTopNav = (elem) => {
   gsap.fromTo(
     elem,
     {
+      opacity: 0,
       y: -200,
     },
     {
+      opacity: 1,
       y: 0,
       duration: 0.8,
       delay: 1,
@@ -131,36 +133,40 @@ export const slideInTopHeader = (elem) => {
 };
 
 export const fixedNav = () => {
-  gsap.to('#navbar', {
+  gsap.to('#big-navbar', {
     scrollTrigger: {
       onLeave: () => {
-        document.querySelector('#navbar').style.transform = 'translateY(-100%)';
+        document.querySelector('#big-navbar').style.transform =
+          'translateY(-100%)';
+        document.querySelector('#big-navbar').style.padding = '18px 80px';
       },
       onEnterBack: () => {
-        document.querySelector('#navbar').style.position = 'absolute';
-        document.querySelector('#navbar').style.transform = 'translateY(0)';
+        document.querySelector('#big-navbar').style.position = 'absolute';
+        document.querySelector('#big-navbar').style.transform = 'translateY(0)';
+        document.querySelector('#big-navbar').style.padding = '38px 80px';
       },
-      trigger: '#navbar',
-      start: '+=240px',
-      end: '+=240px',
+      trigger: '#findPassion',
+      start: '+=100px',
+      end: '+=100px',
     },
   });
   ScrollTrigger.refresh();
 };
 
 export const transformNav = () => {
-  gsap.to('#navbar', {
+  gsap.to('#big-navbar', {
     scrollTrigger: {
       onLeave: () => {
-        document.querySelector('#navbar').style.transform = 'translateY(0)';
-        document.querySelector('#navbar').style.position = 'fixed';
+        document.querySelector('#big-navbar').style.transform = 'translateY(0)';
+        document.querySelector('#big-navbar').style.position = 'fixed';
       },
-      onEnterBack: () =>
-        (document.querySelector('#navbar').style.transform =
-          'translateY(-100%)'),
-      trigger: '#navbar',
-      start: '+=300px',
-      end: '+=300px',
+      onEnterBack: () => {
+        document.querySelector('#big-navbar').style.transform =
+          'translateY(-100%)';
+      },
+      trigger: '#findPassion',
+      start: '+=260px',
+      end: '+=260px',
     },
   });
   ScrollTrigger.refresh();
