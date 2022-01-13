@@ -31,7 +31,7 @@ const Wrapper = styled.div`
   padding: 0 16px;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  column-gap: 32px;
+  gap: 0 32px;
   transition: align-items 3s ease-in-out;
 
   article {
