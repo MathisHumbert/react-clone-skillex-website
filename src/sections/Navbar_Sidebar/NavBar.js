@@ -55,7 +55,7 @@ const Wrapper = styled.nav`
   justify-content: center;
   z-index: 2;
   background: var(--secondary-color);
-  position: absolute;
+  position: absolute !important;
   top: 0;
   transition: transform 0.4s ease-in-out;
 
@@ -85,12 +85,12 @@ const Wrapper = styled.nav`
 
   @media (min-width: 998px) {
     padding: 38px 80px;
+    position: absolute;
 
     /* &.fixed {
       padding: 18px 80px;
       position: fixed;
     } */
-
     .left {
       display: flex;
       align-items: center;

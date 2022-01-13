@@ -3,7 +3,6 @@ import React, { useState, useContext, useEffect } from 'react';
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
-  const navbar = document.querySelector('#navbar');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const closeSidebar = () => {
@@ -16,7 +15,7 @@ const AppProvider = ({ children }) => {
   const handleScroll = (e) => {
     e.preventDefault();
     const id = e.target.getAttribute('href');
-    const navbar = document.querySelector('#navbar');
+    const navbar = document.querySelector('#big-navbar');
     const element = document.querySelector(id);
     const navHeight = navbar.getBoundingClientRect().height;
 
@@ -42,32 +41,32 @@ const AppProvider = ({ children }) => {
     });
   };
 
-  const handleWindowWidth = () => {
-    if (window.innerWidth > 998) {
-      document.querySelector('#navbar').classList.add('big');
-    } else {
-      document.querySelector('#navbar').classList.remove('big');
-    }
-  };
+  // const handleWindowWidth = () => {
+  //   if (window.innerWidth > 998) {
+  //     document.querySelector('#navbar').classList.add('big');
+  //   } else {
+  //     document.querySelector('#navbar').classList.remove('big');
+  //   }
+  // };
 
-  const handleWindowHeight = () => {
-    const navbar = document.querySelector('#navbar');
-    if (window.scrollY > 300 && navbar.classList.contains('big')) {
-      navbar.classList.add('fixed');
-    } else {
-      navbar.classList.remove('fixed');
-    }
-  };
-  useEffect(() => {
-    handleWindowWidth();
-    window.addEventListener('resize', handleWindowWidth);
-    return () => window.removeEventListener('resize', handleWindowWidth);
-  }, []);
+  // const handleWindowHeight = () => {
+  //   const navbar = document.querySelector('#navbar');
+  //   if (window.scrollY > 300 && navbar.classList.contains('big')) {
+  //     navbar.classList.add('fixed');
+  //   } else {
+  //     navbar.classList.remove('fixed');
+  //   }
+  // };
+  // useEffect(() => {
+  //   handleWindowWidth();
+  //   window.addEventListener('resize', handleWindowWidth);
+  //   return () => window.removeEventListener('resize', handleWindowWidth);
+  // }, []);
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleWindowHeight);
-    return () => window.removeEventListener('scroll', handleWindowHeight);
-  });
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleWindowHeight);
+  //   return () => window.removeEventListener('scroll', handleWindowHeight);
+  // });
 
   useEffect(() => {});
 

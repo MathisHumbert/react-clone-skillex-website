@@ -7,6 +7,8 @@ import {
   Reviews,
   ContactFooter,
   NavBar,
+  SmallNav,
+  BigNav,
 } from './sections';
 
 import { transformNav, fixedNav } from './utlis/gsapActions';
@@ -35,15 +37,19 @@ function App() {
   //   }
   // }, [timer]);
 
-  useEffect(() => {
-    transformNav();
-    fixedNav();
-  });
+  // create small Nav and big Nav
+  // fix form
+
+  // useEffect(() => {
+  //   transformNav();
+  //   fixedNav();
+  // });
 
   return (
     <>
       <Sidebar />
-      <NavBar />
+      <SmallNav />
+      <BigNav />
       <FindPassion />
       <Categories />
       <Skills />
