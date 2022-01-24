@@ -1,29 +1,22 @@
 # Skillex Cloned Webiste
 
-This project is a cloned webiste. The original website is [Skillex](https://skillex.webflow.io/#find-passion) that I found on [Dribble](https://dribbble.com/shots/17015850-Skillex-Online-Education)
+This project comes from Benjamin Code who launched a challenge, reproduce a part of the landing page in 1 hour. I decided to realize this challenge, it took me 2 hours to get a result that I liked. Then the other parts of the page interested me, so I decided to clone the whole page.
 
-## The Goal of this project
+The original website is [Skillex](https://skillex.webflow.io/#find-passion) that I found on [Dribble](https://dribbble.com/shots/17015850-Skillex-Online-Education).
 
-The goal of this porject is to clone the actual webiste.
+To find the finished project follow this [link](cloned-skillex-webiste.netlify.app).
 
-I didn't clone everything from the website. I changed some part.
-
-My version is more responsive!
-
-### Technology used
+### Technology 
 
 To code this website I used:
 
 - React
 - Styled Components
 - GSAP
-
-I used Locomotive Scroll before but with this project I had a lot of bug so I went for GSAP for the animation on scroll and no smooth scroll.
+- Context API
 
 ### Find me
 
-If you want to contavt me you can find me on [twitter](https://twitter.com/Mathis1Humbert).
+You can find my [portfolio](https://mathis-humbert-portfolio.netlify.app/).
 
-To find the code follow this [github link](https://github.com/MathisHumbert/react-clone-skillex-website)
-
-To find the [live website](cloned-skillex-webiste.netlify.app)
+You can find more information about my background, my skills and what motivates me via this [link](https://www.notion.so/mathis-humbert-cv/MATHIS-HUMBERT-787daaffef33440f8385b92e908de901?p=64ee085b39934d17b6c6653f79ee9eb6).
